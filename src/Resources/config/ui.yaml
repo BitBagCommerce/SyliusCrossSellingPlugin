@@ -1,0 +1,7 @@
+sylius_ui:
+    events:
+        sylius.shop.product.show.content:
+            blocks:
+                related_products:
+                    template: "@BitBagSyliusUpsellingPlugin/Resources/views/Shop/Product/_relatedProducts.html.twig"
+                    priority: 15

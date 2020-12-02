@@ -5,7 +5,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
-    <imports>
-        <import resource="services/*.xml" />
-    </imports>
+    <services>
+        <service
+            id="bitbag_sylius_upselling_plugin.behat.page.shop.product.show"
+            class="Tests\BitBag\SyliusUpsellingPlugin\Behat\Page\Shop\Product\ShowPage"
+            parent="sylius.behat.page.shop.product.show"
+        />
+    </services>
 </container>

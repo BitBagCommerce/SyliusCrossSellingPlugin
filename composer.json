@@ -1,12 +1,11 @@
 {
-    "name": "sylius/plugin-skeleton",
+    "name": "bitbag/upselling-plugin",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
-    "description": "Acme example plugin for Sylius.",
+    "description": "Upselling plugin for Sylius applications.",
     "license": "MIT",
     "require": {
         "php": "^7.3",
-
         "sylius/sylius": "^1.8"
     },
     "require-dev": {
@@ -41,8 +40,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "BitBag\\SyliusUpsellingPlugin\\": "src/",
+            "Tests\\BitBag\\SyliusUpsellingPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
