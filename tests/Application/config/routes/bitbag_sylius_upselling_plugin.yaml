@@ -1,0 +1,2 @@
+bitbag_sylius_upselling_plugin:
+    resource: "@BitBagSyliusUpsellingPlugin/Resources/config/routing.yaml"
