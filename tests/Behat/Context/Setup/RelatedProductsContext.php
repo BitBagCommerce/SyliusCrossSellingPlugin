@@ -19,7 +19,7 @@ final class RelatedProductsContext implements Context
     /**
      * @Given there were :arg3 orders with product :arg1 and product :arg2
      */
-    public function thereWereOrdersWithProductAndProduct($arg1, $arg2, $arg3)
+    public function thereWereOrdersWithProductAndProduct($arg1, $arg2, $arg3): void
     {
         // todo: implement method
     }
