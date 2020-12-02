@@ -1,0 +1,3 @@
+bitbag_sylius_upselling_plugin:
+    ui:
+        related_products: Related products

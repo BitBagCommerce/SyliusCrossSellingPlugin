@@ -1,0 +1,5 @@
+bitbag_sylius_upselling_plugin_shop:
+    resource: "@BitBagSyliusUpsellingPlugin/Resources/config/routing/shop_routing.yaml"
+    prefix: /{_locale}
+    requirements:
+        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
