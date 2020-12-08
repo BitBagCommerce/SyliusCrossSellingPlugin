@@ -17,17 +17,24 @@ use Sylius\Component\Core\Model\ProductInterface;
 interface RelatedProductsFinderInterface
 {
     /**
+     * @param int[] $excludedProductIds
      * @return ProductInterface[]
      */
-    public function findRelatedInCurrentChannelBySlug(string $slug, int $count): array;
+    public function findRelatedInCurrentChannelBySlug(
+        string $slug,
+        int $maxResults,
+        array $excludedProductIds = []
+    ): array;
 
     /**
+     * @param int[] $excludedProductIds
      * @return ProductInterface[]
      */
     public function findRelatedByChannelAndSlug(
         ChannelInterface $channel,
         string $locale,
         string $slug,
-        int $count
+        int $maxResults,
+        array $excludedProductIds = []
     ): array;
 }

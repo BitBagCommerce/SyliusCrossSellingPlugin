@@ -32,7 +32,7 @@ class ShowPage extends BaseShowPage implements ShowPageInterface
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
-            'related_products' => '[data-test-related-products]',
+            'related_products' => '[data-test-related-products-header] + *',
         ]);
     }
 }

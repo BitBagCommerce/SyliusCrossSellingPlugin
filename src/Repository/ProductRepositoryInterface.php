@@ -30,4 +30,15 @@ interface ProductRepositoryInterface extends CoreProductRepositoryInterface
     ): array;
 
     public function findOneByChannelAndId(ChannelInterface $channel, int $id): ?ProductInterface;
+
+    /**
+     * @param int[] $excludedProductIds
+     * @return ProductInterface[]
+     */
+    public function findLatestByChannelAndTaxonCode(
+        ChannelInterface $channel,
+        string $code,
+        int $count,
+        array $excludedProductIds = []
+    ): array;
 }

@@ -1,2 +1,4 @@
 imports:
-    - suites/ui/shop_displaying_related_products.yaml
+    - suites/ui/shop_displaying_related_products_by_order_history.yaml
+    - suites/ui/shop_displaying_related_products_by_common_taxons.yaml
+    - suites/ui/shop_displaying_related_products_by_mixed_criteria.yaml
