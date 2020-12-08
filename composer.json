@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
+        "friendsofsymfony/elastica-bundle": "^5.2",
         "sylius/sylius": "^1.8"
     },
     "require-dev": {

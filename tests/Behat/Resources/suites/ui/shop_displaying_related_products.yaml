@@ -3,11 +3,13 @@ default:
     displaying_related_products:
       contexts:
         - sylius.behat.context.hook.doctrine_orm
+        - bitbag_sylius_upselling_plugin.behat.context.hook.elasticsearch
 
         - sylius.behat.context.transform.product
 
         - sylius.behat.context.setup.channel
         - sylius.behat.context.setup.product
+        - bitbag_sylius_upselling_plugin.behat.context.setup.elasticsearch
         - bitbag_sylius_upselling_plugin.behat.context.setup.related_products
 
         - sylius.behat.context.ui.shop.product
