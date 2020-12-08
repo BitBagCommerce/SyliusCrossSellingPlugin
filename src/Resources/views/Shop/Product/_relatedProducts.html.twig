@@ -1,8 +1,4 @@
 <div {{ sylius_test_html_attribute('related-products') }}>
     <h4 class="ui horizontal section divider header">{{ 'bitbag_sylius_upselling_plugin.ui.related_products'|trans }}</h4>
-    {{ render(url('bitbag_sylius_upselling_plugin_shop_partial_related_products_index', {
-        'slug': product.slug,
-        'template': '@SyliusShop/Product/_horizontalList.html.twig',
-        'count': 4
-    })) }}
+    {{ bitbag_upselling_render_related_products(product.slug, 4) }}
 </div>
