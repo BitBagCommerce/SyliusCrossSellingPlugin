@@ -6,20 +6,20 @@ Feature: Displaying related products
 
   Background:
     Given the store operates on a single channel in "United States"
+    And the store has a product "Gundam RX-78-2"
     And the store has a product "Zaku Amazing"
     And the store has a product "Zaku Regular"
     And the store has a product "Zaku Terrible"
-    And the store has a product "Gundam RX-78-2"
 
   @ui @api
   Scenario: Displaying related products on product page
-    And there were 12 orders with product "Gundam RX-78-2" and product "Zaku Amazing"
-    And there were 5 orders with product "Gundam RX-78-2" and product "Zaku Regular"
-    And there were 3 orders with product "Gundam RX-78-2" and product "Zaku Terrible"
+    Given there were 3 orders with products "Gundam RX-78-2" and "Zaku Terrible"
+    And there were 5 orders with products "Gundam RX-78-2" and "Zaku Regular"
+    And there were 11 orders with products "Gundam RX-78-2" and "Zaku Amazing"
+    And the data is populated to Elasticsearch
     When I view product "Gundam RX-78-2"
     Then I should see related products list with the following products:
       | name           |
       | Zaku Amazing   |
       | Zaku Regular   |
       | Zaku Terrible  |
-      | Gundam RX-78-2 |
