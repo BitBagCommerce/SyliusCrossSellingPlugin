@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusUpsellingPlugin\Finder;
 
+use BitBag\SyliusUpsellingPlugin\Exception\ProductNotFoundException;
 use BitBag\SyliusUpsellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use BitBag\SyliusUpsellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilderInterface;
 use BitBag\SyliusUpsellingPlugin\Repository\ProductRepositoryInterface;
@@ -51,7 +52,7 @@ class RelatedProductsByOrderHistoryFinder extends AbstractRelatedProductsFinder 
     ): array {
         $product = $this->productRepository->findOneByChannelAndSlug($channel, $locale, $slug);
         if (null === $product) {
-            return [];
+            throw new ProductNotFoundException($slug, $channel, $locale);
         }
 
         return $this->getRelatedByOrderHistory($product->getId(), $channel, $maxResults);

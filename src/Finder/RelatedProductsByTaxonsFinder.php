@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusUpsellingPlugin\Finder;
 
+use BitBag\SyliusUpsellingPlugin\Exception\ProductNotFoundException;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\TaxonInterface;
@@ -29,7 +30,7 @@ class RelatedProductsByTaxonsFinder extends AbstractRelatedProductsFinder implem
     ): array {
         $product = $this->productRepository->findOneByChannelAndSlug($channel, $locale, $slug);
         if (null === $product) {
-            return [];
+            throw new ProductNotFoundException($slug, $channel, $locale);
         }
 
         $taxons = $this->getTaxons($product);
@@ -62,11 +63,20 @@ class RelatedProductsByTaxonsFinder extends AbstractRelatedProductsFinder implem
     protected function getTaxons(ProductInterface $product): array
     {
         $taxons = [];
-        if (null !== $product->getMainTaxon()) {
-            $taxons[] = $product->getMainTaxon();
-        }
-        $taxons = array_merge($taxons, $product->getTaxons()->toArray());
 
-        return array_unique($taxons);
+        $mainTaxon = $product->getMainTaxon();
+        if (null !== $mainTaxon) {
+            $taxons[] = $mainTaxon;
+        }
+
+        foreach ($product->getTaxons() as $taxon) {
+            if (null !== $mainTaxon && $mainTaxon->getId() === $taxon->getId()) {
+                continue;
+            }
+
+            $taxons[] = $taxon;
+        }
+
+        return $taxons;
     }
 }
