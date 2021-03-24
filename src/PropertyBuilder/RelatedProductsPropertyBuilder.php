@@ -36,13 +36,13 @@ final class RelatedProductsPropertyBuilder implements EventSubscriberInterface
 
     public function consumeEvent(TransformEvent $event): void
     {
-        $document = $event->getDocument();
+        $model = $event->getObject();
         
         if (!$model instanceof OrderInterface) {
             return;
         }
         
-        $model = $event->getObject();
+        $document = $event->getDocument();
 
         $document->set(self::PROPERTY_STATE, $model->getState());
         
