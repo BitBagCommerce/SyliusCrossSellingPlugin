@@ -38,11 +38,15 @@ final class RelatedProductsPropertyBuilder implements EventSubscriberInterface
     {
         $document = $event->getDocument();
         
+        if (!$model instanceof OrderInterface) {
+            return;
+        }
+        
         $model = $event->getObject();
 
         $document->set(self::PROPERTY_STATE, $model->getState());
         
-        if (!$model instanceof OrderInterface || !in_array($model->getState(), self::ORDER_STATES, true)) {
+        if (!in_array($model->getState(), self::ORDER_STATES, true)) {
             return;
         }
 
