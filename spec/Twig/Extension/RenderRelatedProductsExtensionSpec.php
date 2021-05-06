@@ -15,18 +15,19 @@ use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsFinderInterface;
 use BitBag\SyliusUpsellingPlugin\Twig\Extension\RenderRelatedProductsExtension;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Symfony\Component\Templating\EngineInterface;
+use Twig\Environment;
 use Twig\Extension\ExtensionInterface;
+
 
 final class RenderRelatedProductsExtensionSpec extends ObjectBehavior
 {
     function let(
         RelatedProductsFinderInterface $relatedProductsFinder,
-        EngineInterface $templatingEngine
+        Environment $twig
     ): void {
         $this->beConstructedWith(
             $relatedProductsFinder,
-            $templatingEngine,
+            $twig,
             '@defaultTemplate.html.twig'
         );
     }
@@ -43,7 +44,7 @@ final class RenderRelatedProductsExtensionSpec extends ObjectBehavior
 
     function it_renders_related_products(
         RelatedProductsFinderInterface $relatedProductsFinder,
-        EngineInterface $templatingEngine
+        Environment $twig
     ): void {
         $relatedProducts = [];
 
@@ -51,7 +52,7 @@ final class RenderRelatedProductsExtensionSpec extends ObjectBehavior
             ->willReturn($relatedProducts);
 
         /** @noinspection PhpTemplateMissingInspection */
-        $templatingEngine->render('@customTemplate.html.twig', [
+        $twig->render('@customTemplate.html.twig', [
             'products' => $relatedProducts,
         ])->willReturn('rendered template');
 

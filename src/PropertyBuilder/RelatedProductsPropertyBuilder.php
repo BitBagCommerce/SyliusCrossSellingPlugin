@@ -19,7 +19,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 final class RelatedProductsPropertyBuilder implements EventSubscriberInterface
 {
     public const PROPERTY_PRODUCT_IDS = 'product_ids';
-    
+
     public const PROPERTY_STATE = 'state';
 
     private const ORDER_STATES = [
@@ -37,18 +37,18 @@ final class RelatedProductsPropertyBuilder implements EventSubscriberInterface
     public function consumeEvent(TransformEvent $event): void
     {
         $model = $event->getObject();
-        
+
         if (!$model instanceof OrderInterface) {
             return;
         }
-        
-        $document = $event->getDocument();
 
-        $document->set(self::PROPERTY_STATE, $model->getState());
-        
         if (!in_array($model->getState(), self::ORDER_STATES, true)) {
             return;
         }
+
+        $document = $event->getDocument();
+
+        $document->set(self::PROPERTY_STATE, $model->getState());
 
         $productIds = $model->getItems()->map(function (OrderItemInterface $orderItem): ?int {
             $product = $orderItem->getProduct();
