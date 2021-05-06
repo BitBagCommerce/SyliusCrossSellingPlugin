@@ -15,7 +15,7 @@
             class="BitBag\SyliusUpsellingPlugin\Twig\Extension\RenderRelatedProductsExtension"
         >
             <argument type="service" id="bitbag_sylius_upselling_plugin.finder.related_products"/>
-            <argument type="service" id="templating" />
+            <argument type="service" id="twig" />
             <argument>%bitbag_sylius_upselling_plugin.template.related_products%</argument>
             <tag name="twig.extension" />
         </service>
