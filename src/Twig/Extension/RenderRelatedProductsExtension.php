@@ -12,9 +12,9 @@ declare(strict_types=1);
 namespace BitBag\SyliusUpsellingPlugin\Twig\Extension;
 
 use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsFinderInterface;
-use Symfony\Component\Templating\EngineInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use Twig\Environment;
 
 final class RenderRelatedProductsExtension extends AbstractExtension
 {
@@ -23,19 +23,19 @@ final class RenderRelatedProductsExtension extends AbstractExtension
     /** @var RelatedProductsFinderInterface */
     private $relatedProductsFinder;
 
-    /** @var EngineInterface */
-    private $templatingEngine;
+    /** @var Environment  */
+    private $twig;
 
     /** @var string */
     private $defaultTemplate;
 
     public function __construct(
         RelatedProductsFinderInterface $relatedProductsFinder,
-        EngineInterface $templatingEngine,
+        Environment $twig,
         string $defaultTemplate
     ) {
         $this->relatedProductsFinder = $relatedProductsFinder;
-        $this->templatingEngine = $templatingEngine;
+        $this->twig = $twig;
         $this->defaultTemplate = $defaultTemplate;
     }
 
@@ -59,7 +59,7 @@ final class RenderRelatedProductsExtension extends AbstractExtension
 
         $products = $this->relatedProductsFinder->findRelatedInCurrentChannelBySlug($slug, $count);
 
-        return $this->templatingEngine->render($template, [
+        return $this->twig->render($template, [
             'products' => $products,
         ]);
     }

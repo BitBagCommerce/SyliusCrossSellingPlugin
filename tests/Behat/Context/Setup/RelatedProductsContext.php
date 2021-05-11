@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Tests\BitBag\SyliusUpsellingPlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use SM\Factory\FactoryInterface as StateMachineFactoryInterface;
 use Sylius\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Core\Model\OrderInterface;
@@ -48,8 +48,8 @@ final class RelatedProductsContext implements Context
     /** @var OrderItemQuantityModifierInterface */
     private $itemQuantityModifier;
 
-    /** @var ObjectManager */
-    private $objectManager;
+    /** @var EntityManagerInterface */
+    private $entityManager;
 
     public function __construct(
         SharedStorageInterface $sharedStorage,
@@ -58,7 +58,7 @@ final class RelatedProductsContext implements Context
         FactoryInterface $customerFactory,
         StateMachineFactoryInterface $stateMachineFactory,
         OrderItemQuantityModifierInterface $itemQuantityModifier,
-        ObjectManager $objectManager
+        EntityManagerInterface $entityManager
     ) {
         $this->sharedStorage = $sharedStorage;
         $this->orderFactory = $orderFactory;
@@ -66,7 +66,7 @@ final class RelatedProductsContext implements Context
         $this->customerFactory = $customerFactory;
         $this->stateMachineFactory = $stateMachineFactory;
         $this->itemQuantityModifier = $itemQuantityModifier;
-        $this->objectManager = $objectManager;
+        $this->entityManager = $entityManager;
     }
 
     /**
@@ -103,10 +103,10 @@ final class RelatedProductsContext implements Context
             $this->payOrder($order);
             $this->shipOrder($order);
 
-            $this->objectManager->persist($order);
+            $this->entityManager->persist($order);
         }
 
-        $this->objectManager->flush();
+        $this->entityManager->flush();
     }
 
     private function createOrder(): OrderInterface
