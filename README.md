@@ -12,7 +12,7 @@ At BitBag we do believe in open source. However, we are able to do it just becau
 
 ***
 
-* [Overview](#overwiev)
+* [Overview](#overview)
 * [Requirements](#requirements)
 * [Support](#we-are-here-to-help)
 * [About us](#about-us)
@@ -68,11 +68,11 @@ Some numbers regarding Sylius:
 
 ---
 
-If you need some help with Sylius development, don't be hesitate to contact us directly. You can fill the form on [this site](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_cms) or send us an e-mail to hello@bitbag.io!
+If you need some help with Sylius development, don't be hesitate to contact us directly. You can fill the form on [this site](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling) or send us an e-mail to hello@bitbag.io!
 
 ---
 
-[![](https://bitbag.io/wp-content/uploads/2020/10/badges-sylius.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_cms)
+[![](https://bitbag.io/wp-content/uploads/2020/10/badges-sylius.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling)
 ## Community
 
 ---- 
