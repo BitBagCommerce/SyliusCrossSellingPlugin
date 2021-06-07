@@ -1,12 +1,12 @@
-# [![](https://bitbag.io/wp-content/uploads/2021/05/Upselling.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=upselling-plugin)
+# [![](https://bitbag.io/wp-content/uploads/2021/06/CrossSelling.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=crossselling-plugin)
 
-# BitBag SyliusUpsellingPlugin
+# BitBag SyliusCrossSellingPlugin
 
 ----
 
-[![](https://img.shields.io/packagist/l/bitbag/upselling-plugin.svg) ](https://packagist.org/packages/bitbag/upselling-plugin "License") [ ![](https://img.shields.io/packagist/v/bitbag/upselling-plugin.svg) ](https://packagist.org/packages/bitbag/upselling-plugin "Version") [ ![](https://img.shields.io/travis/BitBagCommerce/SyliusUpsellingPlugin/master.svg) ](http://travis-ci.org/BitBagCommerce/SyliusUpsellingPlugin "Build status") [ ![](https://img.shields.io/scrutinizer/g/BitBagCommerce/SyliusUpsellingPlugin.svg) ](https://scrutinizer-ci.com/g/BitBagCommerce/SyliusUpsellingPlugin/ "Scrutinizer") [![](https://poser.pugx.org/bitbag/upselling-plugin/downloads)](https://packagist.org/packages/bitbag/upselling-plugin "Total Downloads") [![Slack](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)](http://sylius-devs.slack.com) [![Support](https://img.shields.io/badge/support-contact%20author-blue])](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling)
+[![](https://img.shields.io/packagist/l/bitbag/crossselling-plugin.svg) ](https://packagist.org/packages/bitbag/crossselling-plugin "License") [ ![](https://img.shields.io/packagist/v/bitbag/crossselling-plugin.svg) ](https://packagist.org/packages/bitbag/crossselling-plugin "Version") [ ![](https://img.shields.io/travis/BitBagCommerce/SyliusCrossSellingPlugin/master.svg) ](http://travis-ci.org/BitBagCommerce/SyliusCrossSellingPlugin "Build status") [ ![](https://img.shields.io/scrutinizer/g/BitBagCommerce/SyliusCrossSellingPlugin.svg) ](https://scrutinizer-ci.com/g/BitBagCommerce/SyliusCrossSellingPlugin/ "Scrutinizer") [![](https://poser.pugx.org/bitbag/crossselling-plugin/downloads)](https://packagist.org/packages/bitbag/crossselling-plugin "Total Downloads") [![Slack](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)](http://sylius-devs.slack.com) [![Support](https://img.shields.io/badge/support-contact%20author-blue])](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling)
 
-At BitBag we do believe in open source. However, we are able to do it just because of our awesome clients, who are kind enough to share some parts of our work with the community. Therefore, if you feel like there is a possibility for us working together, feel free to reach us out. You will find out more about our professional services, technologies and contact details at [https://bitbag.io/](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling).
+At BitBag we do believe in open source. However, we are able to do it just because of our awesome clients, who are kind enough to share some parts of our work with the community. Therefore, if you feel like there is a possibility for us working together, feel free to reach us out. You will find out more about our professional services, technologies and contact details at [https://bitbag.io/](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling).
 
 ## Table of Content
 
@@ -23,7 +23,7 @@ At BitBag we do believe in open source. However, we are able to do it just becau
 
 ## Overview
 
-SyliusUpsellingPlugin adds a new section to product page called "Related products". It displays other products bought together with the viewed one, and if there isn't enough data, it displays other products with the same taxon.
+SyliusCrossSellingPlugin adds a new section to product page called "Related products". It displays other products bought together with the viewed one, and if there isn't enough data, it displays other products with the same taxon.
 
 For more details about the algorithm check [Usage](doc/usage.md).
 
@@ -40,7 +40,7 @@ For more details about the algorithm check [Usage](doc/usage.md).
 ## We are here to help
 This **open-source plugin was developed to help the Sylius community**. If you have any additional questions, would like help with installing or configuring the plugin or need any assistance with your Sylius project - let us know!
 
-[![](https://bitbag.io/wp-content/uploads/2020/10/button-contact.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling)
+[![](https://bitbag.io/wp-content/uploads/2020/10/button-contact.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling)
 
 
 ## Contribution
@@ -68,11 +68,11 @@ Some numbers regarding Sylius:
 
 ---
 
-If you need some help with Sylius development, don't be hesitate to contact us directly. You can fill the form on [this site](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling) or send us an e-mail to hello@bitbag.io!
+If you need some help with Sylius development, don't be hesitate to contact us directly. You can fill the form on [this site](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling) or send us an e-mail to hello@bitbag.io!
 
 ---
 
-[![](https://bitbag.io/wp-content/uploads/2020/10/badges-sylius.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling)
+[![](https://bitbag.io/wp-content/uploads/2020/10/badges-sylius.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling)
 ## Community
 
 ---- 
@@ -96,7 +96,7 @@ We also recorded a webinar which presents most of the plugin features, including
 
 **If you need an overview of this plugin, schedule a consultation with our expert.**
 
-[![](https://bitbag.io/wp-content/uploads/2020/10/button_free_consulatation-1.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling)
+[![](https://bitbag.io/wp-content/uploads/2020/10/button_free_consulatation-1.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling)
 
 ## License
 
@@ -109,6 +109,6 @@ This plugin's source code is completely free and released under the terms of the
 ## Contact
 
 ---
-If you want to contact us, the best way is to fill the form on [our website](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling) or send us an e-mail to hello@bitbag.io with your question(s). We guarantee that we answer as soon as we can!
+If you want to contact us, the best way is to fill the form on [our website](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling) or send us an e-mail to hello@bitbag.io with your question(s). We guarantee that we answer as soon as we can!
 
-[![](https://bitbag.io/wp-content/uploads/2020/10/footer.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_upselling)
+[![](https://bitbag.io/wp-content/uploads/2020/10/footer.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_crossselling)
