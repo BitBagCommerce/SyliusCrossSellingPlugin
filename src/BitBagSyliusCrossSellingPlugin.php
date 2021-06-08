@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin;
+namespace BitBag\SyliusCrossSellingPlugin;
 
 use Sylius\Bundle\CoreBundle\Application\SyliusPluginTrait;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class BitBagSyliusUpsellingPlugin extends Bundle
+final class BitBagSyliusCrossSellingPlugin extends Bundle
 {
     use SyliusPluginTrait;
 }

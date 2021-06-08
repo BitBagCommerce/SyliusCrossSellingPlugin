@@ -6,8 +6,8 @@
 >
     <services>
         <service
-            id="bitbag_sylius_upselling_plugin.query_builder.related_products.order_history"
-            class="BitBag\SyliusUpsellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilder"
+            id="bitbag_sylius_crossselling_plugin.query_builder.related_products.order_history"
+            class="BitBag\SyliusCrossSellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilder"
         />
     </services>
 </container>

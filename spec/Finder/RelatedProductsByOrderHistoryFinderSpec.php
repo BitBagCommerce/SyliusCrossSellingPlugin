@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace spec\BitBag\SyliusUpsellingPlugin\Finder;
+namespace spec\BitBag\SyliusCrossSellingPlugin\Finder;
 
-use BitBag\SyliusUpsellingPlugin\Finder\AbstractRelatedProductsFinder;
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsByOrderHistoryFinder;
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsFinderInterface;
-use BitBag\SyliusUpsellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
-use BitBag\SyliusUpsellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilderInterface;
-use BitBag\SyliusUpsellingPlugin\Repository\ProductRepositoryInterface;
+use BitBag\SyliusCrossSellingPlugin\Finder\AbstractRelatedProductsFinder;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsByOrderHistoryFinder;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsFinderInterface;
+use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
+use BitBag\SyliusCrossSellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilderInterface;
+use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepositoryInterface;
 use Elastica\Query;
 use FOS\ElasticaBundle\Finder\PaginatedFinderInterface;
 use FOS\ElasticaBundle\Paginator\FantaPaginatorAdapter;

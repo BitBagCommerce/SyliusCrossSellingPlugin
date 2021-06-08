@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace spec\BitBag\SyliusUpsellingPlugin\Repository;
+namespace spec\BitBag\SyliusCrossSellingPlugin\Repository;
 
-use BitBag\SyliusUpsellingPlugin\Repository\ProductRepository;
-use BitBag\SyliusUpsellingPlugin\Repository\ProductRepositoryInterface;
+use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepository;
+use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepositoryInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping;
 use PhpSpec\ObjectBehavior;

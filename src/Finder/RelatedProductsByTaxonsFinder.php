@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\Finder;
+namespace BitBag\SyliusCrossSellingPlugin\Finder;
 
-use BitBag\SyliusUpsellingPlugin\Exception\ProductNotFoundException;
+use BitBag\SyliusCrossSellingPlugin\Exception\ProductNotFoundException;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\TaxonInterface;

@@ -9,10 +9,10 @@
         <defaults public="true" />
 
         <service
-            id="bitbag_sylius_upselling_plugin.behat.context.ui.shop.related_products"
-            class="Tests\BitBag\SyliusUpsellingPlugin\Behat\Context\Ui\Shop\RelatedProductsContext"
+            id="bitbag_sylius_crossselling_plugin.behat.context.ui.shop.related_products"
+            class="Tests\BitBag\SyliusCrossSellingPlugin\Behat\Context\Ui\Shop\RelatedProductsContext"
         >
-            <argument type="service" id="bitbag_sylius_upselling_plugin.behat.page.shop.product.show" />
+            <argument type="service" id="bitbag_sylius_crossselling_plugin.behat.page.shop.product.show" />
         </service>
     </services>
 </container>

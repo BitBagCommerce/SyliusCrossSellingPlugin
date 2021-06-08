@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace spec\BitBag\SyliusUpsellingPlugin\PropertyBuilder;
+namespace spec\BitBag\SyliusCrossSellingPlugin\PropertyBuilder;
 
-use BitBag\SyliusUpsellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
+use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Elastica\Document;
 use FOS\ElasticaBundle\Event\TransformEvent;

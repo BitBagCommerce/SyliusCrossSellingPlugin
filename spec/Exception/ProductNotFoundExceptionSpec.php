@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\BitBag\SyliusUpsellingPlugin\Exception;
+namespace spec\BitBag\SyliusCrossSellingPlugin\Exception;
 
-use BitBag\SyliusUpsellingPlugin\Exception\ProductNotFoundException;
+use BitBag\SyliusCrossSellingPlugin\Exception\ProductNotFoundException;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Core\Model\ChannelInterface;
 

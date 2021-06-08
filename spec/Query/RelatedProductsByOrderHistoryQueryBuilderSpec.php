@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace spec\BitBag\SyliusUpsellingPlugin\Query;
+namespace spec\BitBag\SyliusCrossSellingPlugin\Query;
 
-use BitBag\SyliusUpsellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilder;
-use BitBag\SyliusUpsellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilderInterface;
+use BitBag\SyliusCrossSellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilder;
+use BitBag\SyliusCrossSellingPlugin\Query\RelatedProductsByOrderHistoryQueryBuilderInterface;
 use Elastica\Query;
 use PhpSpec\ObjectBehavior;
 

@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace spec\BitBag\SyliusUpsellingPlugin\Twig\Extension;
+namespace spec\BitBag\SyliusCrossSellingPlugin\Twig\Extension;
 
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsFinderInterface;
-use BitBag\SyliusUpsellingPlugin\Twig\Extension\RenderRelatedProductsExtension;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsFinderInterface;
+use BitBag\SyliusCrossSellingPlugin\Twig\Extension\RenderRelatedProductsExtension;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Twig\Environment;

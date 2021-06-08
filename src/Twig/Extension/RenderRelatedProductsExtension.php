@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\Twig\Extension;
+namespace BitBag\SyliusCrossSellingPlugin\Twig\Extension;
 
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsFinderInterface;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsFinderInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use Twig\Environment;
@@ -43,7 +43,7 @@ final class RenderRelatedProductsExtension extends AbstractExtension
     {
         return [
             new TwigFunction(
-                'bitbag_upselling_render_related_products',
+                'bitbag_crossselling_render_related_products',
                 [$this, 'renderRelatedProducts'],
                 ['is_safe' => ['html']]
             ),

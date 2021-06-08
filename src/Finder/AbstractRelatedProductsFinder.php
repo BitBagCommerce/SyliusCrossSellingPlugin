@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\Finder;
+namespace BitBag\SyliusCrossSellingPlugin\Finder;
 
-use BitBag\SyliusUpsellingPlugin\Repository\ProductRepositoryInterface;
+use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepositoryInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductInterface;

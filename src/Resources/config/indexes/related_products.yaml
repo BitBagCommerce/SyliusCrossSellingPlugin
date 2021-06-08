@@ -1,10 +1,10 @@
 parameters:
-    bitbag_upselling.elasticsearch.related_products.index: related_products
+    bitbag_crossselling.elasticsearch.related_products.index: related_products
 
 fos_elastica:
     indexes:
         bitbag_related_products:
-            index_name: '%bitbag_upselling.elasticsearch.related_products.index%_%kernel.environment%'
+            index_name: '%bitbag_crossselling.elasticsearch.related_products.index%_%kernel.environment%'
             types:
                 default:
                     properties: ~

@@ -1,8 +1,8 @@
 {
-    "name": "bitbag/upselling-plugin",
+    "name": "bitbag/crossselling-plugin",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
-    "description": "Upselling plugin for Sylius applications.",
+    "description": "CrossSelling plugin for Sylius applications.",
     "license": "MIT",
     "require": {
         "php": "^7.3",
@@ -44,15 +44,15 @@
     },
     "autoload": {
         "psr-4": {
-            "BitBag\\SyliusUpsellingPlugin\\": "src/",
-            "Tests\\BitBag\\SyliusUpsellingPlugin\\": "tests/"
+            "BitBag\\SyliusCrossSellingPlugin\\": "src/",
+            "Tests\\BitBag\\SyliusCrossSellingPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\BitBag\\SyliusUpsellingPlugin\\Behat\\": "tests/Behat",
-            "Tests\\BitBag\\SyliusUpsellingPlugin\\Unit\\": "tests/Unit",
-            "spec\\BitBag\\SyliusUpsellingPlugin\\": "spec/"
+            "Tests\\BitBag\\SyliusCrossSellingPlugin\\Behat\\": "tests/Behat",
+            "Tests\\BitBag\\SyliusCrossSellingPlugin\\Unit\\": "tests/Unit",
+            "spec\\BitBag\\SyliusCrossSellingPlugin\\": "spec/"
         },
         "classmap": [
             "tests/Application/Kernel.php"

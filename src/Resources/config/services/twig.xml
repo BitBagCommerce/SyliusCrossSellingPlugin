@@ -6,17 +6,17 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <parameters>
-        <parameter key="bitbag_sylius_upselling_plugin.template.related_products" type="string">@SyliusShop/Product/_horizontalList.html.twig</parameter>
+        <parameter key="bitbag_sylius_crossselling_plugin.template.related_products" type="string">@SyliusShop/Product/_horizontalList.html.twig</parameter>
     </parameters>
 
     <services>
         <service
-            id="bitbag_sylius_upselling_plugin.twig.extension.render_related_products"
-            class="BitBag\SyliusUpsellingPlugin\Twig\Extension\RenderRelatedProductsExtension"
+            id="bitbag_sylius_crossselling_plugin.twig.extension.render_related_products"
+            class="BitBag\SyliusCrossSellingPlugin\Twig\Extension\RenderRelatedProductsExtension"
         >
-            <argument type="service" id="bitbag_sylius_upselling_plugin.finder.related_products"/>
+            <argument type="service" id="bitbag_sylius_crossselling_plugin.finder.related_products"/>
             <argument type="service" id="twig" />
-            <argument>%bitbag_sylius_upselling_plugin.template.related_products%</argument>
+            <argument>%bitbag_sylius_crossselling_plugin.template.related_products%</argument>
             <tag name="twig.extension" />
         </service>
     </services>

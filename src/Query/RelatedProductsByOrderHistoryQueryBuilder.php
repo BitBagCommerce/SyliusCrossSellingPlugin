@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\Query;
+namespace BitBag\SyliusCrossSellingPlugin\Query;
 
-use BitBag\SyliusUpsellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
+use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use Elastica\Aggregation\Terms;
 use Elastica\Query;
 use Elastica\Query\BoolQuery;

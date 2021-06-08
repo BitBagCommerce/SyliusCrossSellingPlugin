@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusUpsellingPlugin\Behat\Page\Shop\Product;
+namespace Tests\BitBag\SyliusCrossSellingPlugin\Behat\Page\Shop\Product;
 
 use Behat\Mink\Element\NodeElement;
 use Sylius\Behat\Page\Shop\Product\ShowPage as BaseShowPage;

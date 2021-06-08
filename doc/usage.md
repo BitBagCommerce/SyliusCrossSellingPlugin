@@ -27,10 +27,10 @@ Related products are calculated using the following priorities:
 The related products section is rendered by `Resources/views/Shop/Product/_relatedProducts.html.twig`. You can override this template to modify it to your needs.
 
 ### Rendering related products list
-`bitbag_upselling_render_related_products()` Twig function renders the individual products. You can call it with optional parameters:
+`bitbag_crossselling_render_related_products()` Twig function renders the individual products. You can call it with optional parameters:
 ```php
 // displays 8 most related products using @customTemplate.html.twig
-{{ bitbag_upselling_render_related_products(product.slug, 8, '@customTemplate.html.twig') }}
+{{ bitbag_crossselling_render_related_products(product.slug, 8, '@customTemplate.html.twig') }}
 ```
 
 ### Parameters you can override in your parameters.yml(.dist) file

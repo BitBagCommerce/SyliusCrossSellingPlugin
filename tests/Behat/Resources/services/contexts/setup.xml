@@ -9,8 +9,8 @@
         <defaults public="true" />
 
         <service
-            id="bitbag_sylius_upselling_plugin.behat.context.setup.related_products"
-            class="Tests\BitBag\SyliusUpsellingPlugin\Behat\Context\Setup\RelatedProductsContext"
+            id="bitbag_sylius_crossselling_plugin.behat.context.setup.related_products"
+            class="Tests\BitBag\SyliusCrossSellingPlugin\Behat\Context\Setup\RelatedProductsContext"
         >
             <argument type="service" id="sylius.behat.shared_storage" />
             <argument type="service" id="sylius.factory.order" />
@@ -22,10 +22,10 @@
         </service>
 
         <service
-            id="bitbag_sylius_upselling_plugin.behat.context.setup.elasticsearch"
-            class="Tests\BitBag\SyliusUpsellingPlugin\Behat\Context\Setup\ElasticsearchContext"
+            id="bitbag_sylius_crossselling_plugin.behat.context.setup.elasticsearch"
+            class="Tests\BitBag\SyliusCrossSellingPlugin\Behat\Context\Setup\ElasticsearchContext"
         >
-            <argument type="service" id="bitbag_sylius_upselling_plugin.behat.service.elasticsearch_commands" />
+            <argument type="service" id="bitbag_sylius_crossselling_plugin.behat.service.elasticsearch_commands" />
         </service>
     </services>
 </container>

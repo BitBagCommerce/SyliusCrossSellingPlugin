@@ -6,8 +6,8 @@
 >
     <services>
         <service
-            id="bitbag_sylius_upselling_plugin.repository.product"
-            class="BitBag\SyliusUpsellingPlugin\Repository\ProductRepository"
+            id="bitbag_sylius_crossselling_plugin.repository.product"
+            class="BitBag\SyliusCrossSellingPlugin\Repository\ProductRepository"
             parent="sylius.repository.product"
         />
     </services>

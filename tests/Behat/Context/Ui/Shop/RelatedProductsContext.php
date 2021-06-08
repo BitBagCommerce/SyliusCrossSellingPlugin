@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusUpsellingPlugin\Behat\Context\Ui\Shop;
+namespace Tests\BitBag\SyliusCrossSellingPlugin\Behat\Context\Ui\Shop;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
-use Tests\BitBag\SyliusUpsellingPlugin\Behat\Page\Shop\Product\ShowPageInterface;
+use Tests\BitBag\SyliusCrossSellingPlugin\Behat\Page\Shop\Product\ShowPageInterface;
 use Webmozart\Assert\Assert;
 
 final class RelatedProductsContext implements Context

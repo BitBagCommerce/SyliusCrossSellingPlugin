@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace spec\BitBag\SyliusUpsellingPlugin\Finder;
+namespace spec\BitBag\SyliusCrossSellingPlugin\Finder;
 
-use BitBag\SyliusUpsellingPlugin\Finder\AbstractRelatedProductsFinder;
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsByTaxonsFinder;
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsFinderInterface;
-use BitBag\SyliusUpsellingPlugin\Repository\ProductRepositoryInterface;
+use BitBag\SyliusCrossSellingPlugin\Finder\AbstractRelatedProductsFinder;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsByTaxonsFinder;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsFinderInterface;
+use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepositoryInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

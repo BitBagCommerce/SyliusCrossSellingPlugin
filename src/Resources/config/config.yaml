@@ -1,3 +1,3 @@
 imports:
-    - { resource: "@BitBagSyliusUpsellingPlugin/Resources/config/indexes/*" }
-    - { resource: "@BitBagSyliusUpsellingPlugin/Resources/config/ui.yaml" }
+    - { resource: "@BitBagSyliusCrossSellingPlugin/Resources/config/indexes/*" }
+    - { resource: "@BitBagSyliusCrossSellingPlugin/Resources/config/ui.yaml" }
