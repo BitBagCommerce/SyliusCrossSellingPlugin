@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace spec\BitBag\SyliusUpsellingPlugin\Finder;
+namespace spec\BitBag\SyliusCrossSellingPlugin\Finder;
 
-use BitBag\SyliusUpsellingPlugin\Finder\AbstractRelatedProductsFinder;
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsCombinedFinder;
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsFinderInterface;
-use BitBag\SyliusUpsellingPlugin\Repository\ProductRepositoryInterface;
+use BitBag\SyliusCrossSellingPlugin\Finder\AbstractRelatedProductsFinder;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsCombinedFinder;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsFinderInterface;
+use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepositoryInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Core\Model\ChannelInterface;

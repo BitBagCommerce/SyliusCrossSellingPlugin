@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusUpsellingPlugin\Behat\Service;
+namespace Tests\BitBag\SyliusCrossSellingPlugin\Behat\Service;
 
 use FOS\ElasticaBundle\Event\IndexPopulateEvent;
 use FOS\ElasticaBundle\Event\TypePopulateEvent;

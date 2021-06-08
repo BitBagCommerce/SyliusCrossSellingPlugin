@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use Tests\BitBag\SyliusUpsellingPlugin\Application\Kernel;
+use Tests\BitBag\SyliusCrossSellingPlugin\Application\Kernel;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
 

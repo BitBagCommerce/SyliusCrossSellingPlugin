@@ -46,7 +46,7 @@ default:
         FriendsOfBehat\SymfonyExtension:
             bootstrap: tests/Application/config/bootstrap.php
             kernel:
-                class: Tests\BitBag\SyliusUpsellingPlugin\Application\Kernel
+                class: Tests\BitBag\SyliusCrossSellingPlugin\Application\Kernel
 
         FriendsOfBehat\VariadicExtension: ~
 

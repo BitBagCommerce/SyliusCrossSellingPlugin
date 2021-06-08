@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\Repository;
+namespace BitBag\SyliusCrossSellingPlugin\Repository;
 
 use Doctrine\DBAL\Connection;
 use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository as CoreProductRepository;

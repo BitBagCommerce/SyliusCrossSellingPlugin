@@ -1,4 +1,4 @@
 suites:
     main:
-        namespace: BitBag\SyliusUpsellingPlugin
-        psr4_prefix: BitBag\SyliusUpsellingPlugin
+        namespace: BitBag\SyliusCrossSellingPlugin
+        psr4_prefix: BitBag\SyliusCrossSellingPlugin

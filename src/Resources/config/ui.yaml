@@ -3,5 +3,5 @@ sylius_ui:
         sylius.shop.product.show.content:
             blocks:
                 related_products:
-                    template: "@BitBagSyliusUpsellingPlugin/Shop/Product/_relatedProducts.html.twig"
+                    template: "@BitBagSyliusCrossSellingPlugin/Shop/Product/_relatedProducts.html.twig"
                     priority: 15

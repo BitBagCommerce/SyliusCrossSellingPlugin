@@ -14,7 +14,7 @@ default:
         - sylius.behat.context.setup.taxonomy
 
         - sylius.behat.context.ui.shop.product
-        - bitbag_sylius_upselling_plugin.behat.context.ui.shop.related_products
+        - bitbag_sylius_crossselling_plugin.behat.context.ui.shop.related_products
 
       filters:
         tags: "@displaying_related_products_by_common_taxons && @ui"

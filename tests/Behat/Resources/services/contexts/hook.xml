@@ -9,10 +9,10 @@
         <defaults public="true" />
 
         <service
-            id="bitbag_sylius_upselling_plugin.behat.context.hook.elasticsearch"
-            class="Tests\BitBag\SyliusUpsellingPlugin\Behat\Context\Hook\ElasticsearchContext"
+            id="bitbag_sylius_crossselling_plugin.behat.context.hook.elasticsearch"
+            class="Tests\BitBag\SyliusCrossSellingPlugin\Behat\Context\Hook\ElasticsearchContext"
         >
-            <argument type="service" id="bitbag_sylius_upselling_plugin.behat.service.elasticsearch_commands" />
+            <argument type="service" id="bitbag_sylius_crossselling_plugin.behat.service.elasticsearch_commands" />
         </service>
     </services>
 </container>

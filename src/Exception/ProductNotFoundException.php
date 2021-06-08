@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\Exception;
+namespace BitBag\SyliusCrossSellingPlugin\Exception;
 
 use Sylius\Component\Core\Model\ChannelInterface;
 

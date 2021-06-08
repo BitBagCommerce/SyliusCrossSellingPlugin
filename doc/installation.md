@@ -3,16 +3,17 @@
 *Note*: This Plugin currently supports ElasticSearch 5.3.x up to 6.8.x.  ElasticSearch ^7.x is not currently supported.
 
 ```bash
-$ composer require bitbag/upselling-plugin
+$ composer require bitbag/crossselling-plugin
 ```
 
 Add plugin dependencies to your `config/bundles.php` file:
+
 ```php
 return [
     ...
     
     FOS\ElasticaBundle\FOSElasticaBundle::class => ['all' => true],
-    BitBag\SyliusUpsellingPlugin\BitBagSyliusUpsellingPlugin::class => ['all' => true],
+    BitBag\SyliusCrossSellingPlugin\BitBagSyliusCrossSellingPlugin::class => ['all' => true],
 ];
 ```
 
@@ -23,7 +24,7 @@ Import required config in your `config/packages/_sylius.yaml` file:
 imports:
     ...
 
-    - { resource: "@BitBagSyliusUpsellingPlugin/Resources/config/config.yaml" }
+    - { resource: "@BitBagSyliusCrossSellingPlugin/Resources/config/config.yaml" }
 ```
 
 Remove the default ElasticSearch index (`app`) defined by `FOSElasticaBundle` in `config/packages/fos_elastica.yaml`:

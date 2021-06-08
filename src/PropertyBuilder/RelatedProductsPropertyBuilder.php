@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\PropertyBuilder;
+namespace BitBag\SyliusCrossSellingPlugin\PropertyBuilder;
 
 use FOS\ElasticaBundle\Event\TransformEvent;
 use Sylius\Component\Core\Model\OrderInterface;

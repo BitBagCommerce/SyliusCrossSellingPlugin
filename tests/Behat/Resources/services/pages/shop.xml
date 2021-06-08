@@ -7,8 +7,8 @@
 >
     <services>
         <service
-            id="bitbag_sylius_upselling_plugin.behat.page.shop.product.show"
-            class="Tests\BitBag\SyliusUpsellingPlugin\Behat\Page\Shop\Product\ShowPage"
+            id="bitbag_sylius_crossselling_plugin.behat.page.shop.product.show"
+            class="Tests\BitBag\SyliusCrossSellingPlugin\Behat\Page\Shop\Product\ShowPage"
             parent="sylius.behat.page.shop.product.show"
         />
     </services>

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusUpsellingPlugin\Query;
+namespace BitBag\SyliusCrossSellingPlugin\Query;
 
 use Elastica\Query;
 

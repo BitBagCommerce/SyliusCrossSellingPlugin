@@ -11,8 +11,8 @@
 
     <services>
         <service
-            id="bitbag_sylius_upselling_plugin.behat.service.elasticsearch_commands"
-            class="Tests\BitBag\SyliusUpsellingPlugin\Behat\Service\ElasticsearchCommands"
+            id="bitbag_sylius_crossselling_plugin.behat.service.elasticsearch_commands"
+            class="Tests\BitBag\SyliusCrossSellingPlugin\Behat\Service\ElasticsearchCommands"
         >
             <argument type="service" id="event_dispatcher"/>
             <argument type="service" id="fos_elastica.index_manager"/>

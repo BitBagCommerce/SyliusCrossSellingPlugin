@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusUpsellingPlugin\Behat\Context\Hook;
+namespace Tests\BitBag\SyliusCrossSellingPlugin\Behat\Context\Hook;
 
 use Behat\Behat\Context\Context;
-use Tests\BitBag\SyliusUpsellingPlugin\Behat\Service\ElasticsearchCommands;
+use Tests\BitBag\SyliusCrossSellingPlugin\Behat\Service\ElasticsearchCommands;
 
 final class ElasticsearchContext implements Context
 {

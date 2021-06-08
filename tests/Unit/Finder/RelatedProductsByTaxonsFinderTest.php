@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\BitBag\SyliusUpsellingPlugin\Unit\Finder;
+namespace Tests\BitBag\SyliusCrossSellingPlugin\Unit\Finder;
 
-use BitBag\SyliusUpsellingPlugin\Finder\RelatedProductsByTaxonsFinder;
-use BitBag\SyliusUpsellingPlugin\Repository\ProductRepositoryInterface;
+use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsByTaxonsFinder;
+use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepositoryInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use PHPUnit\Framework\MockObject\MockObject;

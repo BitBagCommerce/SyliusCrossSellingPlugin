@@ -3,7 +3,7 @@ default:
     displaying_related_products_by_mixed_criteria:
       contexts:
         - sylius.behat.context.hook.doctrine_orm
-        - bitbag_sylius_upselling_plugin.behat.context.hook.elasticsearch
+        - bitbag_sylius_crossselling_plugin.behat.context.hook.elasticsearch
 
         - sylius.behat.context.transform.product
         - sylius.behat.context.transform.shared_storage
@@ -13,11 +13,11 @@ default:
         - sylius.behat.context.setup.product
         - sylius.behat.context.setup.product_taxon
         - sylius.behat.context.setup.taxonomy
-        - bitbag_sylius_upselling_plugin.behat.context.setup.elasticsearch
-        - bitbag_sylius_upselling_plugin.behat.context.setup.related_products
+        - bitbag_sylius_crossselling_plugin.behat.context.setup.elasticsearch
+        - bitbag_sylius_crossselling_plugin.behat.context.setup.related_products
 
         - sylius.behat.context.ui.shop.product
-        - bitbag_sylius_upselling_plugin.behat.context.ui.shop.related_products
+        - bitbag_sylius_crossselling_plugin.behat.context.ui.shop.related_products
 
       filters:
         tags: "@displaying_related_products_by_mixed_criteria && @ui"

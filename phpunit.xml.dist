@@ -5,7 +5,7 @@
          colors="true"
          bootstrap="tests/Application/config/bootstrap.php">
     <testsuites>
-        <testsuite name="BitBagSyliusUpsellingPlugin Unit Test Suite">
+        <testsuite name="BitBagSyliusCrossSellingPlugin Unit Test Suite">
             <directory>tests/Unit</directory>
         </testsuite>
     </testsuites>

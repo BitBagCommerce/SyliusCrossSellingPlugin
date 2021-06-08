@@ -5,7 +5,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="bitbag_sylius_upselling_plugin.property_builder.related_products" class="BitBag\SyliusUpsellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder">
+        <service id="bitbag_sylius_crossselling_plugin.property_builder.related_products" class="BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder">
             <tag name="kernel.event_subscriber" />
         </service>
     </services>
