@@ -1,6 +1,6 @@
 # [![](https://bitbag.io/wp-content/uploads/2021/06/CrossSelling.png)](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=crossselling-plugin)
 
-# BitBag SyliusCrossSellingPlugin
+# BitBag SyliusCrossSellingPlugin123
 
 ----
 
