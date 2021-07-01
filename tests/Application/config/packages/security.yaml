@@ -50,10 +50,6 @@ security:
                 target: sylius_admin_login
             anonymous: true
 
-        oauth_token:
-            pattern: "%sylius.security.api_regex%/oauth/v2/token"
-            security: false
-
         new_api_admin_user:
             pattern: "%sylius.security.new_api_route%/admin-user-authentication-token"
             provider: sylius_admin_user_provider
@@ -92,13 +88,6 @@ security:
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
-
-        api:
-            pattern: "%sylius.security.api_regex%/.*"
-            provider: sylius_admin_user_provider
-            fos_oauth: true
-            stateless: true
-            anonymous: true
 
         shop:
             switch_user: { role: ROLE_ALLOWED_TO_SWITCH }
