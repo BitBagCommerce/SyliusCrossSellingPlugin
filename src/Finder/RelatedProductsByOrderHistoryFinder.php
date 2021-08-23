@@ -79,6 +79,7 @@ class RelatedProductsByOrderHistoryFinder extends AbstractRelatedProductsFinder 
 
     /**
      * @return int[]
+     * @param Pagerfanta<mixed> $result
      */
     protected function extractProductIds(Pagerfanta $result, int $excludeId): array
     {
