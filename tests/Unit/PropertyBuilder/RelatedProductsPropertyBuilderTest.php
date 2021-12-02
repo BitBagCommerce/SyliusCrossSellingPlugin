@@ -13,7 +13,7 @@ namespace Tests\BitBag\SyliusCrossSellingPlugin\Unit\PropertyBuilder;
 use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Elastica\Document;
-use FOS\ElasticaBundle\Event\TransformEvent;
+use FOS\ElasticaBundle\Event\PostTransformEvent;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
