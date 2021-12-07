@@ -15,7 +15,7 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 class DynamicWelcomePage extends SymfonyPage implements WelcomePageInterface
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getGreeting(): string
     {
@@ -31,7 +31,7 @@ class DynamicWelcomePage extends SymfonyPage implements WelcomePageInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getRouteName(): string
     {
@@ -39,7 +39,7 @@ class DynamicWelcomePage extends SymfonyPage implements WelcomePageInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function getDefinedElements(): array
     {

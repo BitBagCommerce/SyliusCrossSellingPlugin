@@ -105,8 +105,8 @@ final class RelatedProductsByTaxonsFinderTest extends TestCase
         $this->productRepository->method('findLatestByChannelAndTaxonCode')
             ->willReturnCallback(function (
                 $channel,
-                string $taxonCode,
-                int $maxResults
+        string $taxonCode,
+        int $maxResults
             ) use ($repositoryProducts): array {
                 $result = $repositoryProducts[$taxonCode] ?? [];
 
@@ -121,7 +121,11 @@ final class RelatedProductsByTaxonsFinderTest extends TestCase
     /**
      * @param string[] $taxonCodes
      */
-    private function createProduct(int $id, array $taxonCodes, ?string $mainTaxonCode = null): ProductInterface
+    private function createProduct(
+        int $id,
+        array $taxonCodes,
+        ?string $mainTaxonCode = null
+    ): ProductInterface
     {
         $product = $this->createMock(ProductInterface::class);
         $product->method('getId')->willReturn($id);
@@ -142,6 +146,7 @@ final class RelatedProductsByTaxonsFinderTest extends TestCase
 
     /**
      * @param string[] $taxonCodes
+     *
      * @return TaxonInterface[]|Collection
      */
     private function createTaxons(array $taxonCodes): Collection
@@ -162,11 +167,12 @@ final class RelatedProductsByTaxonsFinderTest extends TestCase
 
     /**
      * @param ProductInterface[] $products
+     *
      * @return int[]
      */
     protected function getIds(array $products): array
     {
-        return array_map(function(ProductInterface $product): int {
+        return array_map(function (ProductInterface $product): int {
             return $product->getId();
         }, $products);
     }

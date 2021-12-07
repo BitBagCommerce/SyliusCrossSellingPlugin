@@ -11,9 +11,9 @@ declare(strict_types=1);
 namespace BitBag\SyliusCrossSellingPlugin\Twig\Extension;
 
 use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsFinderInterface;
+use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
-use Twig\Environment;
 
 final class RenderRelatedProductsExtension extends AbstractExtension
 {
@@ -22,7 +22,7 @@ final class RenderRelatedProductsExtension extends AbstractExtension
     /** @var RelatedProductsFinderInterface */
     private $relatedProductsFinder;
 
-    /** @var Environment  */
+    /** @var Environment */
     private $twig;
 
     /** @var string */

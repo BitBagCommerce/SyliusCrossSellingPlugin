@@ -38,7 +38,7 @@ abstract class AbstractRelatedProductsFinder implements RelatedProductsFinderInt
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function findRelatedInCurrentChannelBySlug(
         string $slug,
@@ -59,11 +59,12 @@ abstract class AbstractRelatedProductsFinder implements RelatedProductsFinderInt
 
     /**
      * @param ProductInterface[] $products
+     *
      * @return int[]
      */
     protected function getIds(array $products): array
     {
-        return array_map(function(ProductInterface $product): int {
+        return array_map(function (ProductInterface $product): int {
             return $product->getId();
         }, $products);
     }

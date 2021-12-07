@@ -36,7 +36,7 @@ class RelatedProductsCombinedFinder extends AbstractRelatedProductsFinder implem
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function findRelatedByChannelAndSlug(
         ChannelInterface $channel,

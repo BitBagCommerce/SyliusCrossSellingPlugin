@@ -18,7 +18,7 @@ use Sylius\Component\Core\Model\TaxonInterface;
 class RelatedProductsByTaxonsFinder extends AbstractRelatedProductsFinder implements RelatedProductsFinderInterface
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function findRelatedByChannelAndSlug(
         ChannelInterface $channel,
@@ -40,7 +40,7 @@ class RelatedProductsByTaxonsFinder extends AbstractRelatedProductsFinder implem
         foreach ($taxons as $taxon) {
             $relatedByTaxon = $this->productRepository->findLatestByChannelAndTaxonCode(
                 $channel,
-                (string)$taxon->getCode(),
+                (string) $taxon->getCode(),
                 $maxResults - count($result),
                 $excludedProductIds
             );

@@ -20,6 +20,7 @@ interface ProductRepositoryInterface extends CoreProductRepositoryInterface
      * Returns at most $maxResults entities, in order matching the $productIds array.
      *
      * @param int[] $productIds
+     *
      * @return ProductInterface[]
      */
     public function findManyByChannelAndIds(
@@ -32,6 +33,7 @@ interface ProductRepositoryInterface extends CoreProductRepositoryInterface
 
     /**
      * @param int[] $excludedProductIds
+     *
      * @return ProductInterface[]
      */
     public function findLatestByChannelAndTaxonCode(

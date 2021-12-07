@@ -17,6 +17,7 @@ interface RelatedProductsFinderInterface
 {
     /**
      * @param int[] $excludedProductIds
+     *
      * @return ProductInterface[]
      */
     public function findRelatedInCurrentChannelBySlug(
@@ -27,6 +28,7 @@ interface RelatedProductsFinderInterface
 
     /**
      * @param int[] $excludedProductIds
+     *
      * @return ProductInterface[]
      */
     public function findRelatedByChannelAndSlug(
