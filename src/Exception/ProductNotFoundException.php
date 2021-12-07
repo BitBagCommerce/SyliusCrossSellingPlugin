@@ -14,7 +14,11 @@ use Sylius\Component\Core\Model\ChannelInterface;
 
 class ProductNotFoundException extends \Exception
 {
-    public function __construct(string $slug, ChannelInterface $channel, string $locale)
+    public function __construct(
+        string $slug,
+        ChannelInterface $channel,
+        string $locale
+    )
     {
         $message = sprintf(
             'Could not find product "%s" in channel "%s" with locale "%s"',

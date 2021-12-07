@@ -15,10 +15,10 @@ use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository as CoreProductReposi
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 
-final class ProductRepository extends CoreProductRepository implements ProductRepositoryInterface
+class ProductRepository extends CoreProductRepository implements ProductRepositoryInterface
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function findManyByChannelAndIds(
         ChannelInterface $channel,
@@ -59,7 +59,7 @@ final class ProductRepository extends CoreProductRepository implements ProductRe
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function findLatestByChannelAndTaxonCode(
         ChannelInterface $channel,
@@ -85,7 +85,7 @@ final class ProductRepository extends CoreProductRepository implements ProductRe
             ->getResult()
         ;
 
-        if (count($excludedProductIds) > 0) {
+        if (0 < count($excludedProductIds)) {
             $qb
                 ->andWhere($expr->notIn('o.id', ':excludedProductIds'))
                 ->setParameter('excludedProductIds', $excludedProductIds, Connection::PARAM_INT_ARRAY)
