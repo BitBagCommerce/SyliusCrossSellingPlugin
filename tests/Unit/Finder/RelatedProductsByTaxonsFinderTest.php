@@ -24,11 +24,9 @@ use Sylius\Component\Locale\Context\ImmutableLocaleContext;
 
 final class RelatedProductsByTaxonsFinderTest extends TestCase
 {
-    /** @var RelatedProductsByTaxonsFinder */
-    private $sut;
+    private RelatedProductsByTaxonsFinder $sut;
 
-    /** @var MockObject|ProductRepositoryInterface */
-    private $productRepository;
+    private ProductRepositoryInterface|MockObject $productRepository;
 
     public function setUp(): void
     {
@@ -125,8 +123,7 @@ final class RelatedProductsByTaxonsFinderTest extends TestCase
         int $id,
         array $taxonCodes,
         ?string $mainTaxonCode = null
-    ): ProductInterface
-    {
+    ): ProductInterface {
         $product = $this->createMock(ProductInterface::class);
         $product->method('getId')->willReturn($id);
         $product->method('getTaxons')->willReturn($this->createTaxons($taxonCodes));
@@ -149,7 +146,7 @@ final class RelatedProductsByTaxonsFinderTest extends TestCase
      *
      * @return TaxonInterface[]|Collection
      */
-    private function createTaxons(array $taxonCodes): Collection
+    private function createTaxons(array $taxonCodes): array|Collection
     {
         return new ArrayCollection(array_map(function (string $code): TaxonInterface {
             return $this->createTaxon($code);
