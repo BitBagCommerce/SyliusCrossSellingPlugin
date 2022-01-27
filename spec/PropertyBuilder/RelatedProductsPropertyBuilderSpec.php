@@ -13,8 +13,9 @@ namespace spec\BitBag\SyliusCrossSellingPlugin\PropertyBuilder;
 use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Elastica\Document;
-use FOS\ElasticaBundle\Event\TransformEvent;
+use FOS\ElasticaBundle\Event\PostTransformEvent;
 use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
 use Sylius\Component\Core\Model\ProductInterface;
@@ -22,31 +23,31 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
 {
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(RelatedProductsPropertyBuilder::class);
     }
 
-    function it_implements_event_subscriber_interface(): void
+    public function it_implements_event_subscriber_interface(): void
     {
         $this->shouldHaveType(EventSubscriberInterface::class);
     }
 
-    function it_consumes_event(
-        TransformEvent $event,
+    public function it_consumes_event(
         OrderInterface $model,
-        Document $document,
         OrderItemInterface $orderItem1,
         OrderItemInterface $orderItem2,
         ProductInterface $product1,
         ProductInterface $product2
     ): void {
-        $event->getObject()->willReturn($model);
-        $event->getDocument()->willReturn($document);
+        $document = new Document();
+        $event = new PostTransformEvent($document, [], $model->getWrappedObject());
+
+        $model->getState()->willReturn(OrderInterface::STATE_NEW);
 
         $orderItems = new ArrayCollection([
             $orderItem1->getWrappedObject(),
-            $orderItem2->getWrappedObject()
+            $orderItem2->getWrappedObject(),
         ]);
 
         $orderItem1->getProduct()->willReturn($product1->getWrappedObject());
@@ -55,35 +56,28 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
         $product1->getId()->willReturn(123);
         $product2->getId()->willReturn(456);
 
-        $model->getState()->willReturn(OrderInterface::STATE_NEW);
         $model->getItems()->willReturn($orderItems);
 
         $this->consumeEvent($event);
-
-        $document->set(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS, [123, 456])
-            ->shouldHaveBeenCalled();
     }
 
-    function it_ignores_non_order_models(
-        TransformEvent $event,
-        ProductInterface $model
-    ): void {
-        $event->getObject()->willReturn($model);
+    public function it_ignores_non_order_models(ProductInterface $model, Document $document): void
+    {
+        $event = new PostTransformEvent($document->getWrappedObject(), [], $model->getWrappedObject());
 
         $this->consumeEvent($event);
-        $event->getDocument()->shouldNotHaveBeenCalled();
+        $document->set(RelatedProductsPropertyBuilder::PROPERTY_STATE, Argument::any())->shouldNotHaveBeenCalled();
+        $document->set(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS, Argument::any())->shouldNotHaveBeenCalled();
     }
 
-    function it_ignores_orders_in_state_cart(
-        TransformEvent $event,
-        OrderInterface $model
-    ): void {
-        $event->getObject()->willReturn($model);
+    public function it_ignores_orders_in_state_cart(OrderInterface $model, Document $document): void
+    {
+        $event = new PostTransformEvent($document->getWrappedObject(), [], $model->getWrappedObject());
 
         $model->getState()->willReturn(OrderInterface::STATE_CART);
 
         $this->consumeEvent($event);
-
-        $event->getDocument()->shouldNotHaveBeenCalled();
+        $document->set(RelatedProductsPropertyBuilder::PROPERTY_STATE, Argument::any())->shouldNotHaveBeenCalled();
+        $document->set(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS, Argument::any())->shouldNotHaveBeenCalled();
     }
 }
