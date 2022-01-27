@@ -17,17 +17,17 @@ use PhpSpec\ObjectBehavior;
 
 final class RelatedProductsByOrderHistoryQueryBuilderSpec extends ObjectBehavior
 {
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(RelatedProductsByOrderHistoryQueryBuilder::class);
     }
 
-    function it_implements_event_subscriber_interface(): void
+    public function it_implements_event_subscriber_interface(): void
     {
         $this->shouldHaveType(RelatedProductsByOrderHistoryQueryBuilderInterface::class);
     }
 
-    function it_builds_query(): void
+    public function it_builds_query(): void
     {
         $this->buildQuery(123)->shouldReturnAnInstanceOf(Query::class);
     }

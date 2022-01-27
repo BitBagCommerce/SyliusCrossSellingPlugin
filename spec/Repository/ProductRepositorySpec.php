@@ -18,17 +18,17 @@ use PhpSpec\ObjectBehavior;
 
 final class ProductRepositorySpec extends ObjectBehavior
 {
-    function let(EntityManager $entityManager, Mapping\ClassMetadata $class): void
+    public function let(EntityManager $entityManager, Mapping\ClassMetadata $class): void
     {
         $this->beConstructedWith($entityManager, $class);
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(ProductRepository::class);
     }
 
-    function it_implements_event_subscriber_interface(): void
+    public function it_implements_event_subscriber_interface(): void
     {
         $this->shouldHaveType(ProductRepositoryInterface::class);
     }

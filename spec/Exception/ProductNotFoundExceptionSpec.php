@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace spec\BitBag\SyliusCrossSellingPlugin\Exception;
 
 use BitBag\SyliusCrossSellingPlugin\Exception\ProductNotFoundException;
@@ -8,19 +10,18 @@ use Sylius\Component\Core\Model\ChannelInterface;
 
 class ProductNotFoundExceptionSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         ChannelInterface $channel
-    ): void
-    {
+    ): void {
         $this->beConstructedWith('test-123', $channel, 'en_US');
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(ProductNotFoundException::class);
     }
 
-    function it_should_extend_exception(): void
+    public function it_should_extend_exception(): void
     {
         $this->shouldHaveType(\Exception::class);
     }

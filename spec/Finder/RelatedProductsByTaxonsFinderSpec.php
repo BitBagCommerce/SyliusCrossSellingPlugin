@@ -16,7 +16,6 @@ use BitBag\SyliusCrossSellingPlugin\Finder\RelatedProductsFinderInterface;
 use BitBag\SyliusCrossSellingPlugin\Repository\ProductRepositoryInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductInterface;
@@ -25,7 +24,7 @@ use Sylius\Component\Locale\Context\LocaleContextInterface;
 
 final class RelatedProductsByTaxonsFinderSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         ChannelContextInterface $channelContext,
         LocaleContextInterface $localeContext,
         ProductRepositoryInterface $productRepository
@@ -37,22 +36,22 @@ final class RelatedProductsByTaxonsFinderSpec extends ObjectBehavior
         );
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(RelatedProductsByTaxonsFinder::class);
     }
 
-    function it_implements_related_products_finder_interface(): void
+    public function it_implements_related_products_finder_interface(): void
     {
         $this->shouldHaveType(RelatedProductsFinderInterface::class);
     }
 
-    function it_extends_abstract_related_products_finder(): void
+    public function it_extends_abstract_related_products_finder(): void
     {
         $this->shouldHaveType(AbstractRelatedProductsFinder::class);
     }
 
-    function it_finds_related_in_current_channel_by_slug(
+    public function it_finds_related_in_current_channel_by_slug(
         ChannelContextInterface $channelContext,
         ChannelInterface $channel,
         LocaleContextInterface $localeContext,
@@ -90,7 +89,7 @@ final class RelatedProductsByTaxonsFinderSpec extends ObjectBehavior
             ->shouldReturn([$relatedProduct]);
     }
 
-    function it_finds_related_by_channel_and_slug(
+    public function it_finds_related_by_channel_and_slug(
         ChannelContextInterface $channelContext,
         ChannelInterface $channel,
         LocaleContextInterface $localeContext,

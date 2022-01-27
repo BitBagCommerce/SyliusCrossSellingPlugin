@@ -17,10 +17,9 @@ use Prophecy\Argument;
 use Twig\Environment;
 use Twig\Extension\ExtensionInterface;
 
-
 final class RenderRelatedProductsExtensionSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         RelatedProductsFinderInterface $relatedProductsFinder,
         Environment $twig
     ): void {
@@ -31,17 +30,17 @@ final class RenderRelatedProductsExtensionSpec extends ObjectBehavior
         );
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(RenderRelatedProductsExtension::class);
     }
 
-    function it_implements_extension_interface(): void
+    public function it_implements_extension_interface(): void
     {
         $this->shouldHaveType(ExtensionInterface::class);
     }
 
-    function it_renders_related_products(
+    public function it_renders_related_products(
         RelatedProductsFinderInterface $relatedProductsFinder,
         Environment $twig
     ): void {
