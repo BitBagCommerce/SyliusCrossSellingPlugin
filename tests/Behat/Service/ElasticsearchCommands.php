@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Tests\BitBag\SyliusCrossSellingPlugin\Behat\Service;
 
 use FOS\ElasticaBundle\Event\PostIndexPopulateEvent;
+use FOS\ElasticaBundle\Event\PreIndexPopulateEvent;
 use FOS\ElasticaBundle\Index\IndexManager;
 use FOS\ElasticaBundle\Index\Resetter;
 use FOS\ElasticaBundle\Persister\PagerPersisterInterface;
@@ -63,8 +64,8 @@ final class ElasticsearchCommands
         ];
 
         foreach ($indexes as $index) {
-            $event = new PostIndexPopulateEvent($index, true, $options);
-            $this->dispatcher->dispatch($event, PostIndexPopulateEvent::class);
+            $event = new PreIndexPopulateEvent($index, true, $options);
+            $this->dispatcher->dispatch($event, PreIndexPopulateEvent::class);
 
             if ($event->isReset()) {
                 $this->resetter->resetIndex($index, true);
@@ -77,7 +78,7 @@ final class ElasticsearchCommands
                 $this->populateIndexType($index, $type, $event->getOptions());
             }
 
-            $this->dispatcher->dispatch($event, PostIndexPopulateEvent::class);
+            $this->dispatcher->dispatch($event, PreIndexPopulateEvent::class);
 
             $this->refreshIndex($index);
         }

@@ -21,11 +21,11 @@ use Sylius\Component\Core\Model\ProductInterface;
 
 final class RelatedProductsPropertyBuilderTest extends TestCase
 {
-    private RelatedProductsPropertyBuilder $sut;
+    private RelatedProductsPropertyBuilder $propertyBuilder;
 
     public function setUp(): void
     {
-        $this->sut = new RelatedProductsPropertyBuilder();
+        $this->propertyBuilder = new RelatedProductsPropertyBuilder();
     }
 
     /**
@@ -37,7 +37,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
             $this->createProduct(123),
         ]);
 
-        $this->sut->consumeEvent($event);
+        $this->propertyBuilder->consumeEvent($event);
 
         $this->assertSame(
             $event->getDocument()->get(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS),
@@ -52,7 +52,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
     {
         $event = $this->createEvent($ignoredOrderState, []);
 
-        $this->sut->consumeEvent($event);
+        $this->propertyBuilder->consumeEvent($event);
 
         $this->assertFalse(
             $event->getDocument()->has(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS)
@@ -67,7 +67,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
             $this->createProduct(789),
         ]);
 
-        $this->sut->consumeEvent($event);
+        $this->propertyBuilder->consumeEvent($event);
 
         $this->assertSame(
             $event->getDocument()->get(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS),
@@ -82,7 +82,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
             null,
         ]);
 
-        $this->sut->consumeEvent($event);
+        $this->propertyBuilder->consumeEvent($event);
 
         $this->assertSame(
             $event->getDocument()->get(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS),
