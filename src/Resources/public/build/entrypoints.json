@@ -1,0 +1,20 @@
+{
+  "entrypoints": {
+    "bitbag-cs-shop": {
+      "css": [
+        "/public/build/bitbag-cs-shop.css"
+      ],
+      "js": [
+        "/public/build/bitbag-cs-shop.js"
+      ]
+    },
+    "bitbag-cs-admin": {
+      "css": [
+        "/public/build/bitbag-cs-admin.css"
+      ],
+      "js": [
+        "/public/build/bitbag-cs-admin.js"
+      ]
+    }
+  }
+}
