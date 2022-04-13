@@ -13,7 +13,7 @@ namespace spec\BitBag\SyliusCrossSellingPlugin\PropertyBuilder;
 use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Elastica\Document;
-use FOS\ElasticaBundle\Event\AbstractTransformEvent;
+use FOS\ElasticaBundle\Event\TransformEvent;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
@@ -33,7 +33,7 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
     }
 
     function it_consumes_event(
-        AbstractTransformEvent $event,
+        TransformEvent $event,
         OrderInterface $model,
         Document $document,
         OrderItemInterface $orderItem1,
@@ -65,7 +65,7 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
     }
 
     function it_ignores_non_order_models(
-        AbstractTransformEvent $event,
+        TransformEvent $event,
         ProductInterface $model
     ): void {
         $event->getObject()->willReturn($model);
@@ -75,7 +75,7 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
     }
 
     function it_ignores_orders_in_state_cart(
-        AbstractTransformEvent $event,
+        TransformEvent $event,
         OrderInterface $model
     ): void {
         $event->getObject()->willReturn($model);
