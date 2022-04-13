@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace BitBag\SyliusCrossSellingPlugin\PropertyBuilder;
 
 use FOS\ElasticaBundle\Event\PostTransformEvent;
+use Psr\EventDispatcher\StoppableEventInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -33,7 +34,7 @@ final class RelatedProductsPropertyBuilder implements EventSubscriberInterface
         ];
     }
 
-    public function consumeEvent(PostTransformEvent $event): void
+    public function consumeEvent(StoppableEventInterface $event): void
     {
         $model = $event->getObject();
 
