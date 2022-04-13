@@ -7,7 +7,7 @@
     "require": {
         "php": "^7.3 || ^7.4 || ^8.0",
         "bitbag/coding-standard": "^1.0",
-        "friendsofsymfony/elastica-bundle": "^6.0",
+        "friendsofsymfony/elastica-bundle": "^5.2",
         "sylius/sylius": "~1.8.0 || ~1.9.0 || ~1.10.0 || ~1.11.0",
         "symfony/webpack-encore-bundle": "^1.14"
     },
@@ -44,7 +44,12 @@
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false,
+            "phpstan/extension-installer": false,
+            "symfony/thanks": false
+        }
     },
     "autoload": {
         "psr-4": {
