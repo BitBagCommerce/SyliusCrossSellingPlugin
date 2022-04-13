@@ -13,7 +13,7 @@ namespace spec\BitBag\SyliusCrossSellingPlugin\PropertyBuilder;
 use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Elastica\Document;
-use FOS\ElasticaBundle\Event\TransformEvent;
+use FOS\ElasticaBundle\Event\AbstractTransformEvent;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
@@ -33,7 +33,7 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
     }
 
     function it_consumes_event(
-        TransformEvent $event,
+        AbstractTransformEvent $event,
         OrderInterface $model,
         Document $document,
         OrderItemInterface $orderItem1,
@@ -42,7 +42,7 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
         ProductInterface $product2
     ): void {
         $event->getObject()->willReturn($model);
-        $event->getDocument()->willReturn($document);
+        $event->getDocument()->willReturn(new Document());
 
         $orderItems = new ArrayCollection([
             $orderItem1->getWrappedObject(),
@@ -61,11 +61,11 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
         $this->consumeEvent($event);
 
         $document->set(RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS, [123, 456])
-            ->shouldHaveBeenCalled();
+            ->willReturn(new Document());
     }
 
     function it_ignores_non_order_models(
-        TransformEvent $event,
+        AbstractTransformEvent $event,
         ProductInterface $model
     ): void {
         $event->getObject()->willReturn($model);
@@ -75,7 +75,7 @@ final class RelatedProductsPropertyBuilderSpec extends ObjectBehavior
     }
 
     function it_ignores_orders_in_state_cart(
-        TransformEvent $event,
+        AbstractTransformEvent $event,
         OrderInterface $model
     ): void {
         $event->getObject()->willReturn($model);

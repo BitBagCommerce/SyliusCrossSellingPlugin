@@ -23,19 +23,19 @@ jobs:
             matrix:
                 php: ["8.0", "7.4"]
                 symfony: ["^4.4", "^5.2"]
-                sylius: ["~1.9.0", "~1.10.0"]
-                node: ["10.x"]
+                sylius: ["~1.9.0", "~1.10.0", "~1.11.0"]
+                node: ["14.19"]
                 mysql: ["8.0"]
 
                 exclude:
                     - sylius: ~1.9.0
                       php: 8.0
-
                     - sylius: ~1.10.0
                       symfony: ^4.4
-                    # friendsofsymfony/elastica-bundle - package is locking php 7.x
                     - sylius: ~1.10.0
                       php: 8.0
+                    - sylius: ~1.11.0
+                      php: 7.4
 
         env:
             APP_ENV: test
@@ -82,7 +82,7 @@ jobs:
             -   name: Run Elasticsearch
                 uses: elastic/elastic-github-actions/elasticsearch@master
                 with:
-                    stack-version: 6.8.9
+                    stack-version: 7.16.3
 
             -
                 name: Output PHP version for Symfony CLI
