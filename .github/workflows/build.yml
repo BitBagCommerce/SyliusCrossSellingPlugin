@@ -28,10 +28,10 @@ jobs:
                 mysql: ["8.0"]
 
                 exclude:
+                    - sylius: ~1.8.0
+                      php: 8.0
                     - sylius: ~1.9.0
                       php: 8.0
-                   - sylius: ~1.9.0
-                   php: 8.0
                     - sylius: ~1.10.0
                       symfony: ^4.4
                     - sylius: ~1.10.0
