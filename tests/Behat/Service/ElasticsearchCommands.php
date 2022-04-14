@@ -10,8 +10,7 @@ declare(strict_types=1);
 
 namespace Tests\BitBag\SyliusCrossSellingPlugin\Behat\Service;
 
-use FOS\ElasticaBundle\Event\IndexPopulateEvent;
-use FOS\ElasticaBundle\Event\TypePopulateEvent;
+use FOS\ElasticaBundle\Event\PostIndexPopulateEvent;
 use FOS\ElasticaBundle\Index\IndexManager;
 use FOS\ElasticaBundle\Index\Resetter;
 use FOS\ElasticaBundle\Persister\PagerPersisterInterface;
@@ -70,19 +69,19 @@ final class ElasticsearchCommands
         ];
 
         foreach ($indexes as $index) {
-            $event = new IndexPopulateEvent($index, true, $options);
-            $this->dispatcher->dispatch($event, IndexPopulateEvent::PRE_INDEX_POPULATE);
+            $event = new PostIndexPopulateEvent($index, true, $options);
+            $this->dispatcher->dispatch($event, PostIndexPopulateEvent::class);
 
             if ($event->isReset()) {
                 $this->resetter->resetIndex($index, true);
             }
 
-            $types = array_keys($this->pagerProviderRegistry->getIndexProviders($index));
+            $types = array_keys($this->pagerProviderRegistry->getProviders());
             foreach ($types as $type) {
                 $this->populateIndexType($index, $type, false, $event->getOptions());
             }
 
-            $this->dispatcher->dispatch($event, IndexPopulateEvent::POST_INDEX_POPULATE);
+            $this->dispatcher->dispatch($event, PostIndexPopulateEvent::class);
 
             $this->refreshIndex($index);
         }
@@ -95,14 +94,14 @@ final class ElasticsearchCommands
         array $options
     ): void
     {
-        $event = new TypePopulateEvent($index, $type, $reset, $options);
-        $this->dispatcher->dispatch($event, TypePopulateEvent::PRE_TYPE_POPULATE);
+        $event = new PostIndexPopulateEvent($index, $reset, $options);
+        $this->dispatcher->dispatch($event, 'elastica.index.type_pre_populate');
 
         if ($event->isReset()) {
-            $this->resetter->resetIndexType($index, $type);
+            $this->resetter->resetIndex($index);
         }
 
-        $provider = $this->pagerProviderRegistry->getProvider($index, $type);
+        $provider = $this->pagerProviderRegistry->getProvider($index);
 
         $pager = $provider->provide($options);
 
@@ -111,7 +110,7 @@ final class ElasticsearchCommands
 
         $this->pagerPersister->insert($pager, $options);
 
-        $this->dispatcher->dispatch($event, TypePopulateEvent::POST_TYPE_POPULATE);
+        $this->dispatcher->dispatch($event, 'elastica.index.type_post_populate');
 
         $this->refreshIndex($index);
     }
