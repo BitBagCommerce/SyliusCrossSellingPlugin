@@ -20,6 +20,10 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class ElasticsearchCommands
 {
+    public const PRE_TYPE_POPULATE = 'elastica.index.type_pre_populate';
+
+    public const POST_TYPE_POPULATE = 'elastica.index.type_post_populate';
+
     /** @var EventDispatcherInterface */
     private $dispatcher;
 
@@ -95,7 +99,7 @@ final class ElasticsearchCommands
     ): void
     {
         $event = new PostIndexPopulateEvent($index, $reset, $options);
-        $this->dispatcher->dispatch($event, 'elastica.index.type_pre_populate');
+        $this->dispatcher->dispatch($event, self::PRE_TYPE_POPULATE);
 
         if ($event->isReset()) {
             $this->resetter->resetIndex($index);
@@ -110,7 +114,7 @@ final class ElasticsearchCommands
 
         $this->pagerPersister->insert($pager, $options);
 
-        $this->dispatcher->dispatch($event, 'elastica.index.type_post_populate');
+        $this->dispatcher->dispatch($event, self::POST_TYPE_POPULATE);
 
         $this->refreshIndex($index);
     }
