@@ -23,7 +23,6 @@
         "eslint-plugin-import": "^2.11.0",
         "fast-async": "^6.3.7",
         "merge-stream": "^1.0.0",
-        "sass": "^1.50.0",
         "sass-loader": "^7.0.1",
         "upath": "^1.1.0",
         "yargs": "^6.4.0"
