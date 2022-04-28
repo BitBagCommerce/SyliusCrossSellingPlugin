@@ -13,7 +13,7 @@ namespace Tests\BitBag\SyliusCrossSellingPlugin\Unit\PropertyBuilder;
 use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Elastica\Document;
-use FOS\ElasticaBundle\Event\PostTransformEvent;
+use FOS\ElasticaBundle\Event\TransformEvent;
 use PHPUnit\Framework\TestCase;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
@@ -107,7 +107,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
         ];
     }
 
-    private function createEvent(string $orderState, array $products): PostTransformEvent
+    private function createEvent(string $orderState, array $products): TransformEvent
     {
         $document = new Document();
 
@@ -122,7 +122,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
         $order->method('getState')->willReturn($orderState);
         $order->method('getItems')->willReturn($orderItems);
 
-        return new PostTransformEvent($document, [], $order);
+        return new TransformEvent($document, [], $order);
     }
 
     private function createProduct(int $id): ProductInterface
