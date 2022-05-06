@@ -107,7 +107,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
         ];
     }
 
-    private function createEvent(string $orderState, array $products): TransformEvent
+    private function createEvent(string $orderState, array $products): PostTransformEvent
     {
         $document = new Document();
 
@@ -122,7 +122,7 @@ final class RelatedProductsPropertyBuilderTest extends TestCase
         $order->method('getState')->willReturn($orderState);
         $order->method('getItems')->willReturn($orderItems);
 
-        return new TransformEvent($document, [], $order);
+        return new PostTransformEvent($document, [], $order);
     }
 
     private function createProduct(int $id): ProductInterface

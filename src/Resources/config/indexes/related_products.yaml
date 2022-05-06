@@ -5,7 +5,8 @@ fos_elastica:
     indexes:
         bitbag_related_products:
             index_name: '%bitbag_crossselling.elasticsearch.related_products.index%_%kernel.environment%'
-            properties: ~
+            properties:
+                state: ~
             persistence:
                 driver: orm
                 model: '%sylius.model.order.class%'
