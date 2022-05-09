@@ -34,7 +34,6 @@ final class RelatedProductsPropertyBuilder implements EventSubscriberInterface
         ];
     }
 
-
     public function consumeEvent(AbstractTransformEvent $event): void
     {
         $model = $event->getObject();
