@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace BitBag\SyliusCrossSellingPlugin\Query;
 
 use BitBag\SyliusCrossSellingPlugin\PropertyBuilder\RelatedProductsPropertyBuilder;
+use BitBag\SyliusCrossSellingPlugin\Notifier\QueryDispatcherInterface;
 use Elastica\Aggregation\Terms;
 use Elastica\Query;
 use Elastica\Query\BoolQuery;
@@ -20,6 +21,14 @@ final class RelatedProductsByOrderHistoryQueryBuilder implements RelatedProducts
 {
     private const MAX_AGGREGATION_SIZE = 50;
 
+    /** @var QueryDispatcherInterface $queryDispatcher */
+    private $queryDispatcher;
+
+    public function __construct(QueryDispatcherInterface $queryDispatcher)
+    {
+        $this->queryDispatcher = $queryDispatcher;
+    }
+
     public function buildQuery(int $productId): Query
     {
         $boolQuery = new BoolQuery();
@@ -27,6 +36,8 @@ final class RelatedProductsByOrderHistoryQueryBuilder implements RelatedProducts
             RelatedProductsPropertyBuilder::PROPERTY_PRODUCT_IDS,
             (string) $productId
         ));
+
+        $this->queryDispatcher->dispatchNewQuery($boolQuery);
 
         $query = new Query($boolQuery);
         $query->addAggregation($this->getProductIdsAggregation());
