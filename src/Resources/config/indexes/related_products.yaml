@@ -5,12 +5,15 @@ fos_elastica:
     indexes:
         bitbag_related_products:
             index_name: '%bitbag_crossselling.elasticsearch.related_products.index%_%kernel.environment%'
-            properties: ~
-            persistence:
-                driver: orm
-                model: '%sylius.model.order.class%'
-                listener:
-                    defer: true
-                    logger: true
-                elastica_to_model_transformer:
-                    ignore_missing: true
+            types:
+                default:
+                    properties:
+                        state: ~
+                    persistence:
+                        driver: orm
+                        model: '%sylius.model.order.class%'
+                        listener:
+                            defer: true
+                            logger: true
+                        elastica_to_model_transformer:
+                            ignore_missing: true
