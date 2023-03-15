@@ -125,7 +125,10 @@ jobs:
                     key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.json **/composer.lock') }}
                     restore-keys: |
                         ${{ runner.os }}-php-${{ matrix.php }}-composer-
-
+            -
+              name: Copy composer.json.dist to package.json
+              if: matrix.sylius != ''
+              run: (cd tests/Application && cp package.json.\${{ matrix.sylius }}.dist package.json)
             -
                 name: Restrict Symfony version
                 if: matrix.symfony != ''
@@ -156,6 +159,11 @@ jobs:
                     key: ${{ runner.os }}-node-${{ matrix.node }}-yarn-${{ hashFiles('**/package.json **/yarn.lock') }}
                     restore-keys: |
                         ${{ runner.os }}-node-${{ matrix.node }}-yarn-
+
+            -
+                name: Copy package.json.dist to package.json
+                if: matrix.sylius != ''
+                run: (cd tests/Application && cp package.json.\${{ matrix.sylius }}.dist package.json)
 
             -
                 name: Install JS dependencies
