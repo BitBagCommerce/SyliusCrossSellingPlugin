@@ -114,10 +114,6 @@ jobs:
                 name: Run webserver
                 run: (cd tests/Application && symfony server:start --port=8080 --dir=public --daemon)
 
-            - name: Copy composer.json.dist to package.json
-              if: matrix.sylius != ''
-              run: (cd tests/Application && cp package.json.\${{ matrix.sylius }}.dist package.json)
-
             -
                 name: Get Composer cache directory
                 id: composer-cache
@@ -131,7 +127,10 @@ jobs:
                     key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.json **/composer.lock') }}
                     restore-keys: |
                         ${{ runner.os }}-php-${{ matrix.php }}-composer-
-
+            -
+              name: Copy composer.json.dist to package.json
+              if: matrix.sylius != ''
+              run: (cd tests/Application && cp package.json.\${{ matrix.sylius }}.dist package.json)
             -
                 name: Restrict Symfony version
                 if: matrix.symfony != ''
@@ -155,11 +154,6 @@ jobs:
                 run: echo "::set-output name=dir::$(yarn cache dir)"
 
             -
-              name: Copy package.json.dist to package.json
-              if: matrix.sylius != ''
-              run: (cd tests/Application && cp package.json.\${{ matrix.sylius }}.dist package.json)
-
-            -
                 name: Cache Yarn
                 uses: actions/cache@v2
                 with:
@@ -167,6 +161,11 @@ jobs:
                     key: ${{ runner.os }}-node-${{ matrix.node }}-yarn-${{ hashFiles('**/package.json **/yarn.lock') }}
                     restore-keys: |
                         ${{ runner.os }}-node-${{ matrix.node }}-yarn-
+
+            -
+                name: Copy package.json.dist to package.json
+                if: matrix.sylius != ''
+                run: (cd tests/Application && cp package.json.\${{ matrix.sylius }}.dist package.json)
 
             -
                 name: Install JS dependencies
