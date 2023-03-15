@@ -78,10 +78,5 @@
         "post-create-project-cmd": [
             "php bin/create_node_symlink.php"
         ]
-    },
-    "extra": {
-        "symfony": {
-            "require": "^3.4"
-        }
     }
 }
