@@ -130,7 +130,7 @@ jobs:
             -
               name: Copy composer.json.dist to package.json
               if: matrix.sylius != ''
-              run: (cd tests/Application && cp package.json.\${{ matrix.sylius }}.dist package.json)
+              run: ( cp composer.json.\${{ matrix.sylius }}.dist composer.json)
             -
                 name: Restrict Symfony version
                 if: matrix.symfony != ''
