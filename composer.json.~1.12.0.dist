@@ -5,7 +5,7 @@
     "description": "CrossSelling plugin for Sylius applications.",
     "license": "MIT",
     "require": {
-        "php": "^7.3 || ^7.4 || ^8.0",
+        "php": "^8.0",
         "bitbag/coding-standard": "^1.0",
         "friendsofsymfony/elastica-bundle": "^6.0",
         "sylius/sylius": "~1.12.0",
