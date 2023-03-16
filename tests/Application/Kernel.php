@@ -59,13 +59,6 @@ final class Kernel extends BaseKernel
         }
     }
 
-//    protected function configureRoutes(RouteCollectionBuilder $routes): void
-//    {
-//        foreach ($this->getConfigurationDirectories() as $confDir) {
-//            $this->loadRoutesConfiguration($routes, $confDir);
-//        }
-//    }
-
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
         foreach ($this->getConfigurationDirectories() as $confDir) {
@@ -101,13 +94,6 @@ final class Kernel extends BaseKernel
         $loader->load($confDir . '/{services}' . self::CONFIG_EXTS, 'glob');
         $loader->load($confDir . '/{services}_' . $this->environment . self::CONFIG_EXTS, 'glob');
     }
-
-//    private function loadRoutesConfiguration(RouteCollectionBuilder $routes, string $confDir): void
-//    {
-//        $routes->import($confDir . '/{routes}/*' . self::CONFIG_EXTS, '/', 'glob');
-//        $routes->import($confDir . '/{routes}/' . $this->environment . '/**/*' . self::CONFIG_EXTS, '/', 'glob');
-//        $routes->import($confDir . '/{routes}' . self::CONFIG_EXTS, '/', 'glob');
-//    }
 
     /**
      * @return BundleInterface[]
