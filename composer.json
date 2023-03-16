@@ -8,7 +8,7 @@
         "php": "^8.0",
         "bitbag/coding-standard": "^1.0",
         "friendsofsymfony/elastica-bundle": "^6.0",
-        "sylius/sylius": "~1.11.0 || ~1.12.0",
+        "sylius/sylius": "~1.11.0",
         "symfony/routing": "^5.4 || ^6.0",
         "symfony/webpack-encore-bundle": "^1.14"
     },
@@ -79,7 +79,7 @@
     },
     "extra": {
         "symfony": {
-            "require": "^6.0"
+            "require": "^5.4"
         }
     }
 }
