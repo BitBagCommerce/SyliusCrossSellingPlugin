@@ -30,7 +30,7 @@
         "yargs": "^6.4.0"
     },
     "scripts": {
-        "buildd": "encore production",
+        "build": "encore production",
         "dev": "encore dev",
         "lint": "yarn lint:js",
         "lint:js": "eslint gulpfile.babel.js"
