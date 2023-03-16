@@ -8,8 +8,8 @@
         "php": "^8.0",
         "bitbag/coding-standard": "^1.0",
         "friendsofsymfony/elastica-bundle": "^6.0",
-        "sylius/sylius": "~1.12.0",
-        "symfony/routing": "^5.4",
+        "sylius/sylius": "~1.11.0 || ~1.12.0",
+        "symfony/routing": "^5.4 || ^6.0",
         "symfony/webpack-encore-bundle": "^1.14"
     },
     "require-dev": {
@@ -39,7 +39,7 @@
         "symfony/dotenv": "^4.4 || ^5.2",
         "symfony/intl": "^4.4 || ^5.2",
         "symfony/web-profiler-bundle": "^4.4 || ^5.2",
-        "vimeo/psalm": "^5",
+        "vimeo/psalm": "^4.7.1 || ^5",
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
     "config": {
@@ -76,5 +76,10 @@
         "post-create-project-cmd": [
             "php bin/create_node_symlink.php"
         ]
+    },
+    "extra": {
+        "symfony": {
+            "require": "^6.0"
+        }
     }
 }
