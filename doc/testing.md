@@ -1,6 +1,9 @@
 ## Testing
 
 Setup test environment:
+
+Go to tests/Application and depending on sylius version remove ".~{sylius_version}.dist" from 
+package.json
 ```bash
 $ composer install
 $ cd tests/Application
