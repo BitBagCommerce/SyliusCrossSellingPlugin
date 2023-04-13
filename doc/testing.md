@@ -2,7 +2,6 @@
 
 Setup test environment:
 
-package.json
 ```bash
 $ composer install
 $ cd tests/Application
