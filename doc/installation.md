@@ -50,3 +50,13 @@ $ bin/console fos:elastica:populate
 ```
 
 **Note:** If you are running it on production, add the `-e prod` flag to this command. Elasticsearch indexes are created with environment suffix, e.g. `related_products_dev`.
+
+Add plugin assets to your project
+We recommend you to use Webpack (Encore), for which we have prepared four different instructions on how to add this plugin's assets to your project:
+
+Add plugin assets to your project
+
+We recommend you to use Webpack (Encore), for which we have prepared four different instructions on how to add this plugin's assets to your project:
+
+- [Import webpack config](./01.1-webpack-config.md)
+
