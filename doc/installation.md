@@ -56,7 +56,7 @@ We recommend you to use Webpack (Encore), for which we have prepared four differ
 
 Add plugin assets to your project
 
-We recommend you to use Webpack (Encore), for which we have prepared four different instructions on how to add this plugin's assets to your project:
+Configure webpack
 
 - [Import webpack config](./01.1-webpack-config.md)
 
