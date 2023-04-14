@@ -35,7 +35,7 @@
             parent="bitbag_sylius_crossselling_plugin.finder.related_products.abstract"
         >
             <argument type="service" id="bitbag_sylius_crossselling_plugin.query_builder.related_products.order_history" />
-            <argument type="service" id="fos_elastica.finder.bitbag_related_products" />
+            <argument type="service" id="sylius.context.locale" />
         </service>
 
         <service
