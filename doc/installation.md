@@ -3,7 +3,7 @@
 *Note*: This Plugin currently supports ElasticSearch 5.3.x up to 6.8.x.  ElasticSearch ^7.x is not currently supported.
 
 ```bash
-$ composer require bitbag/crossselling-plugin
+$ composer require bitbag/crossselling-plugin --no-scripts
 ```
 
 Add plugin dependencies to your `config/bundles.php` file:
@@ -42,6 +42,12 @@ should become:
 fos_elastica:
     clients:
         default: { host: localhost, port: 9200 }
+```
+
+Before populating indexes, please clear the cache with the command:
+
+```
+$ bin/console cache:clear
 ```
 
 Finally, with an elasticsearch server running, execute following command:
