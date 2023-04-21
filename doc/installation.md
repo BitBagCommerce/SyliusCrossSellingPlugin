@@ -50,3 +50,9 @@ $ bin/console fos:elastica:populate
 ```
 
 **Note:** If you are running it on production, add the `-e prod` flag to this command. Elasticsearch indexes are created with environment suffix, e.g. `related_products_dev`.
+
+
+Configure webpack
+
+- [Import webpack config](./01.1-webpack-config.md)
+

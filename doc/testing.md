@@ -1,6 +1,7 @@
 ## Testing
 
 Setup test environment:
+
 ```bash
 $ composer install
 $ cd tests/Application

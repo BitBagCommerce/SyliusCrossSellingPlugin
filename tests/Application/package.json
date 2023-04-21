@@ -1,12 +1,13 @@
 {
     "dependencies": {
         "babel-polyfill": "^6.26.0",
-        "chart.js": "^2.9.3",
+        "chart": "^0.1.2",
         "jquery": "^3.4.0",
         "jquery.dirtyforms": "^2.0.0",
         "lightbox2": "^2.9.0",
         "semantic-ui-css": "^2.2.0",
-        "slick-carousel": "^1.8.1"
+        "slick-carousel": "^1.8.1",
+        "chart.js": "^3.7.1"
     },
     "devDependencies": {
         "@symfony/webpack-encore": "^1.6.1",
@@ -26,11 +27,12 @@
         "sass": "^1.50.0",
         "sass-loader": "^7.0.1",
         "upath": "^1.1.0",
+        "webpack": "^5.76.1",
         "yargs": "^6.4.0"
     },
     "scripts": {
-        "build": "gulp build",
-        "gulp": "gulp build",
+        "build": "encore production",
+        "dev": "encore dev",
         "lint": "yarn lint:js",
         "lint:js": "eslint gulpfile.babel.js"
     },
