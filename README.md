@@ -4,10 +4,10 @@
 
 ----
 
-[![](https://img.shields.io/packagist/l/bitbag/byrd-shipping-export-plugin.svg)](https://packagist.org/packages/bitbag/plugins_cross-selling "License")
-[![](https://img.shields.io/packagist/v/bitbag/plugins_cross-selling.svg)](https://packagist.org/packages/bitbag/plugins_cross-selling "Version")
-[![](https://img.shields.io/github/workflow/status/BitBagCommerce/SyliusCrossSellingPlugin/Build)](https://github.com/BitBagCommerce/SyliusCrossSellingPlugin/actions "Build status")
-[![](https://poser.pugx.org/bitbag/plugins_cross-selling/downloads)](https://packagist.org/packages/bitbag/plugins_cross-selling "Total Downloads")
+[![](https://img.shields.io/packagist/l/bitbag/crossselling-plugin.svg)](https://packagist.org/packages/bitbag/crossselling-plugin "License")
+[![](https://img.shields.io/packagist/v/bitbag/crossselling-plugin.svg)](https://packagist.org/packages/bitbag/crossselling-plugin "Version")
+[![](https://img.shields.io/github/actions/workflow/status/BitBagCommerce/SyliusCrossSellingPlugin/build.yml?branch=master)](https://github.com/BitBagCommerce/SyliusCrossSellingPlugin/actions "Build status")
+[![](https://poser.pugx.org/bitbag/crossselling-plugin/downloads)](https://packagist.org/packages/bitbag/crossselling-plugin "Total Downloads")
 [![Slack](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)](http://sylius-devs.slack.com)
 [![Support](https://img.shields.io/badge/support-contact%20author-blue])](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_cross-selling)
 
