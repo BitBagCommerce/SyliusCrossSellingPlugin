@@ -36,6 +36,9 @@
         "symfony/web-profiler-bundle": "^5.4 || ^6.0",
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
+    "conflict": {
+        "doctrine/orm": ">=2.15.2"
+    },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
