@@ -1,6 +1,6 @@
 ## Installation
 
-*Note*: This Plugin currently supports ElasticSearch 5.3.x up to 6.8.x.  ElasticSearch ^7.x is not currently supported.
+*Note*: This Plugin currently supports ElasticSearch ^7.x.
 
 ```bash
 $ composer require bitbag/crossselling-plugin --no-scripts
@@ -27,7 +27,7 @@ imports:
     - { resource: "@BitBagSyliusCrossSellingPlugin/Resources/config/config.yaml" }
 ```
 
-Remove the default ElasticSearch index (`app`) defined by `FOSElasticaBundle` in `config/packages/fos_elastica.yaml`:
+Remove the default ElasticSearch index (`app`) defined by `FOSElasticaBundle` in `config/packages/fos_elastica.yaml` (if the file doesn't exist, please create it with already updated info):
 ```
 
 fos_elastica:
