@@ -6,7 +6,7 @@
 After installation of the plugin, once the customer goes to the product page at `/{_locale}/products/{slug}` they will see a new "Related products" section.
 
 <div align="center">
-    <img src="./doc/related_products.png"/>
+    <img src="./related_products.png"/>
 </div>
 
 Related products are calculated using the following priorities:
