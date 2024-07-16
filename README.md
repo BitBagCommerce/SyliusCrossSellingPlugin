@@ -36,6 +36,7 @@ For more details about the algorithm check [Usage](doc/usage.md).
 - [Installation](doc/installation.md)
 - [Testing](doc/testing.md)
 - [Usage](doc/usage.md)
+- [Functionalities](doc/functionalities.md)
 
 ## We are here to help
 This **open-source plugin was developed to help the Sylius community**. If you have any additional questions, would like help with installing or configuring the plugin, or need any assistance with your Sylius project - let us know!
