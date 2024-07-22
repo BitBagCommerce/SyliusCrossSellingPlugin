@@ -15,6 +15,7 @@ use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository as CoreProductReposi
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 
+/** @phpstan-ignore-next-line Annotation with extends param causes errors in Sylius classes.*/
 class ProductRepository extends CoreProductRepository implements ProductRepositoryInterface
 {
     /**
