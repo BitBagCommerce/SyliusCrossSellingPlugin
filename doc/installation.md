@@ -2,10 +2,6 @@
 
 ## Overview:
 GENERAL
-<!------------------------------------------------------------------
-Downloading the plugin
-Importing or modifying config files, adding routes, parameters, services etc.
--------------------------------------------------------------------->
 - [Requirements](#requirements)
 - [Composer](#composer)
 - [Basic configuration](#basic-configuration)
