@@ -61,7 +61,8 @@ We have a 70-person team of experts: business analysts and consultants, eCommerc
 * [Demo](#demo)
 * [Additional resources for developers](#additional-resources-for-developers)
 * [License](#license)
-* [Contact](#contact)
+* [Contact and support](#contact-and-support)
+* [Community](#community)
 
 # Overview
 
@@ -85,7 +86,7 @@ All main functionalities of the plugin are described **[here](doc/functionalitie
 
 ---
 
-If you need some help with Sylius development, don't be hesitated to contact us directly. You can fill the form on [this site](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_cross-selling) or send us an e-mail at hello@bitbag.io!
+**If you need some help with Sylius development, don't be hesitated to contact us directly. You can fill the form on [this site](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_cross-selling) or send us an e-mail at hello@bitbag.io!**
 
 ---
 
@@ -115,7 +116,7 @@ This plugin's source code is completely free and released under the terms of the
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen.)
 
-# Contact
+# Contact and support
 
 ---
 If you want to contact us, the best way is to fill the form on [our website](https://bitbag.io/contact-us/?utm_source=github&utm_medium=referral&utm_campaign=plugins_cross-selling) or send us an e-mail to hello@bitbag.io with your question(s). We guarantee that we answer as soon as we can!
