@@ -16,4 +16,3 @@ sylius_shop_default_locale:
 live_component:
     resource: "@LiveComponentBundle/config/routes.php"
     prefix: /_components
-
