@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <parameters>
-        <parameter key="bitbag_sylius_crossselling_plugin.template.related_products" type="string">@SyliusShop/Product/_horizontalList.html.twig</parameter>
+        <parameter key="bitbag_sylius_crossselling_plugin.template.related_products" type="string">@SyliusShop/shared/product/horizontal_list.html.twig</parameter>
     </parameters>
 
     <services>
