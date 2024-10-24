@@ -51,7 +51,7 @@ class RelatedProductsCombinedFinder extends AbstractRelatedProductsFinder implem
             $locale,
             $slug,
             $maxResults,
-            $excludedProductIds = [],
+            $excludedProductIds,
         );
 
         if (count($relatedProducts) >= $maxResults) {
