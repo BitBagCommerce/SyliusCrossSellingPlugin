@@ -55,7 +55,7 @@ class RelatedProductsByOrderHistoryFinder extends AbstractRelatedProductsFinder 
             throw new ProductNotFoundException($slug, $channel, $locale);
         }
 
-        return $this->getRelatedByOrderHistory($product->getId(), $channel, $maxResults);
+        return $this->getRelatedByOrderHistory($product->getId(), $channel, $maxResults, $excludedProductIds);
     }
 
     /**
@@ -65,14 +65,14 @@ class RelatedProductsByOrderHistoryFinder extends AbstractRelatedProductsFinder 
         int $productId,
         ChannelInterface $channel,
         int $maxResults,
+        array $excludedProductIds = [],
     ): array {
-        $products = $this->relatedProductsFinder->findPaginated(
-            $this->queryBuilder->buildQuery($productId),
-        );
+        $products = $this->relatedProductsFinder->findPaginated($this->queryBuilder->buildQuery($productId));
+        $excludedProductIds[] = $productId;
 
         return $this->productRepository->findManyByChannelAndIds(
             $channel,
-            $this->extractProductIds($products, $productId),
+            $this->extractProductIds($products, $excludedProductIds),
             $maxResults,
         );
     }
@@ -82,7 +82,7 @@ class RelatedProductsByOrderHistoryFinder extends AbstractRelatedProductsFinder 
      *
      * @param Pagerfanta<mixed> $result
      */
-    protected function extractProductIds(Pagerfanta $result, int $excludeId): array
+    protected function extractProductIds(Pagerfanta $result, array $excludedProductIds = []): array
     {
         $result->setMaxPerPage(1);
         $result->setCurrentPage(1);
@@ -97,7 +97,7 @@ class RelatedProductsByOrderHistoryFinder extends AbstractRelatedProductsFinder 
         $productIds = [];
         foreach ($aggregation['buckets'] as $bucket) {
             $id = $bucket['key'];
-            if ($id === $excludeId) {
+            if (in_array($id, $excludedProductIds, true)) {
                 continue;
             }
 
