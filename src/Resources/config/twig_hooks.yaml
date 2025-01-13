@@ -1,9 +1,9 @@
-twig_hooks:
+sylius_twig_hooks:
   hooks:
-    'sylius_shop.product.show.page.product_listing':
+    'sylius_shop.product.show.content.product_listing':
       related_products:
         template: "@BitBagSyliusCrossSellingPlugin/Shop/Product/_relatedProducts.html.twig"
         priority: 15
       associations:
-        template: "@SyliusShop/product/show/page/product_listing/associations.html.twig"
-        priority: 10
+        template: '@SyliusShop/product/show/content/product_listing/associations.html.twig'
+        priority: 0
