@@ -1,8 +1,13 @@
 {% set product = hookable_metadata.context.product %}
-<h2
-    class="ui horizontal section divider header"
-    {{ sylius_test_html_attribute('related-products-header') }}
->
-    {{ 'bitbag_sylius_crossselling_plugin.ui.related_products'|trans }}
-</h2>
-{{ bitbag_crossselling_render_related_products(product.slug, 4) }}
+
+<div class="container mb-6">
+    <h2
+        class="mb-5"
+        {{ sylius_test_html_attribute('related-products-header') }}
+    >
+        {{ 'bitbag_sylius_crossselling_plugin.ui.related_products'|trans }}
+    </h2>
+    <div>
+        {{ bitbag_crossselling_render_related_products(product.slug, 4) }}
+    </div>
+</div>
