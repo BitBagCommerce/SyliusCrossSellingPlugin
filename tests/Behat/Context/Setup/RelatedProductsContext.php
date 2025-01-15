@@ -14,6 +14,7 @@ use Behat\Behat\Context\Context;
 use Doctrine\ORM\EntityManagerInterface;
 use Sylius\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Component\Core\OrderPaymentStates;
 use Sylius\Component\Core\Model\OrderItemInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
@@ -35,6 +36,8 @@ final class RelatedProductsContext implements Context
         private readonly FactoryInterface $orderItemFactory,
         private readonly FactoryInterface $customerFactory,
         private readonly WorkflowInterface $orderWorkflow,
+        private readonly WorkflowInterface $orderPaymentWorkflow,
+        private readonly WorkflowInterface $shipmentWorkflow,
         private readonly OrderItemQuantityModifierInterface $itemQuantityModifier,
         private readonly EntityManagerInterface $entityManager
     ) {
@@ -63,9 +66,7 @@ final class RelatedProductsContext implements Context
         for ($i = 0; $i < $numberOfOrders; ++$i) {
             $order = $this->createOrder();
 
-
             $this->orderWorkflow->apply($order, OrderTransitions::TRANSITION_CREATE);
-
             $this->applyPaymentTransitionOnOrder($order, PaymentTransitions::TRANSITION_COMPLETE);
 
             foreach ($products as $product) {
@@ -119,8 +120,7 @@ final class RelatedProductsContext implements Context
     private function applyPaymentTransitionOnOrder(OrderInterface $order, string $transition)
     {
         foreach ($order->getPayments() as $payment) {
-            $this->orderWorkflow->get($payment, PaymentTransitions::GRAPH)
-                ->apply($payment, $transition);
+            $this->orderWorkflow->apply($payment, $transition);
         }
     }
 
@@ -137,13 +137,11 @@ final class RelatedProductsContext implements Context
 
     private function payOrder(OrderInterface $order): void
     {
-        $this->orderWorkflow->get($order, OrderPaymentTransitions::GRAPH)
-            ->apply(OrderPaymentTransitions::TRANSITION_PAY);
+        $this->orderPaymentWorkflow->apply($order,OrderPaymentTransitions::TRANSITION_PAY);
     }
 
     private function shipOrder(OrderInterface $order): void
     {
-        $this->orderWorkflow->get($order, OrderShippingTransitions::GRAPH)
-            ->apply(OrderShippingTransitions::TRANSITION_SHIP);
+        $this->shipmentWorkflow->apply($order,OrderShippingTransitions::TRANSITION_SHIP);
     }
 }
