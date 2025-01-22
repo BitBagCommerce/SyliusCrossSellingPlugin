@@ -26,7 +26,7 @@ We work on stable, supported and up-to-date versions of packages. We recommend y
 
 ## Composer:
 ```bash
-composer require bitbag/crossselling-plugin --no-scripts -W
+composer require bitbag/crossselling-plugin --no-scripts
 ```
 
 ## Basic configuration:
