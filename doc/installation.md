@@ -26,7 +26,7 @@ We work on stable, supported and up-to-date versions of packages. We recommend y
 
 ## Composer:
 ```bash
-composer require bitbag/crossselling-plugin --no-scripts
+composer require bitbag/crossselling-plugin --no-scripts -W
 ```
 
 ## Basic configuration:
@@ -144,6 +144,18 @@ SyliusShopBundle:
 {# @SyliusShopBundle/_styles.html.twig #}
 {{ encore_entry_link_tags('bitbag-cs-shop', null, 'cs_shop') }}
 ```
+
+If the following directories and files do not exist, create them:
+
+1. Directory for admin templates:
+    - `templates/bundles/SyliusAdminBundle/`
+        - File: `_scripts.html.twig`
+        - File: `_styles.html.twig`
+
+2. Directory for shop templates:
+    - `templates/bundles/SyliusShopBundle/`
+        - File: `_scripts.html.twig`
+        - File: `_styles.html.twig`
 
 ### Run commands
 ```bash
