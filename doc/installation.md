@@ -130,32 +130,20 @@ Add encore functions to your templates:
 
 SyliusAdminBundle:
 ```php
-{# @SyliusAdminBundle/_scripts.html.twig #}
+{# templates/admin/javascripts.html.twig #}
 {{ encore_entry_script_tags('bitbag-cs-admin', null, 'cs_admin') }}
 
-{# @SyliusAdminBundle/_styles.html.twig #}
+{# templates/admin/stylesheets.html.twig #}
 {{ encore_entry_link_tags('bitbag-cs-admin', null, 'cs_admin') }}
 ```
 SyliusShopBundle:
 ```php
-{# @SyliusShopBundle/_scripts.html.twig #}
+{# templates/shop/javascripts.html.twig #}
 {{ encore_entry_script_tags('bitbag-cs-shop', null, 'cs_shop') }}
 
-{# @SyliusShopBundle/_styles.html.twig #}
+{# templates/shop/stylesheets.html.twig #}
 {{ encore_entry_link_tags('bitbag-cs-shop', null, 'cs_shop') }}
 ```
-
-If the following directories and files do not exist, create them:
-
-1. Directory for admin templates:
-    - `templates/bundles/SyliusAdminBundle/`
-        - File: `_scripts.html.twig`
-        - File: `_styles.html.twig`
-
-2. Directory for shop templates:
-    - `templates/bundles/SyliusShopBundle/`
-        - File: `_scripts.html.twig`
-        - File: `_styles.html.twig`
 
 ### Run commands
 ```bash
