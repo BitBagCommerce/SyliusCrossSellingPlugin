@@ -4,11 +4,15 @@ sylius_shop:
     requirements:
         _locale: ^[A-Za-z]{2,4}(_([A-Za-z]{4}|[0-9]{3}))?(_([A-Za-z]{2}|[0-9]{3}))?$
 
-sylius_shop_payum:
-    resource: "@SyliusShopBundle/Resources/config/routing/payum.yml"
+#sylius_shop_payum:
+#    resource: "@SyliusShopBundle/Resources/config/routing/payum.yml"
 
 sylius_shop_default_locale:
     path: /
     methods: [GET]
     defaults:
-        _controller: sylius.controller.shop.locale_switch:switchAction
+        _controller: sylius.controller.shop.locale_switch::switchAction
+
+live_component:
+    resource: "@LiveComponentBundle/config/routes.php"
+    prefix: /_components

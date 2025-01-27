@@ -12,9 +12,9 @@ namespace Tests\BitBag\SyliusCrossSellingPlugin\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
 use Doctrine\ORM\EntityManagerInterface;
-use SM\Factory\FactoryInterface as StateMachineFactoryInterface;
 use Sylius\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Component\Core\OrderPaymentStates;
 use Sylius\Component\Core\Model\OrderItemInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
@@ -25,47 +25,22 @@ use Sylius\Component\Order\Modifier\OrderItemQuantityModifierInterface;
 use Sylius\Component\Order\OrderTransitions;
 use Sylius\Component\Payment\PaymentTransitions;
 use Sylius\Component\Resource\Factory\FactoryInterface;
+use Symfony\Component\Workflow\WorkflowInterface;
 use Webmozart\Assert\Assert;
 
 final class RelatedProductsContext implements Context
 {
-    /** @var SharedStorageInterface */
-    private $sharedStorage;
-
-    /** @var FactoryInterface */
-    private $orderFactory;
-
-    /** @var FactoryInterface */
-    private $orderItemFactory;
-
-    /** @var FactoryInterface */
-    private $customerFactory;
-
-    /** @var StateMachineFactoryInterface */
-    private $stateMachineFactory;
-
-    /** @var OrderItemQuantityModifierInterface */
-    private $itemQuantityModifier;
-
-    /** @var EntityManagerInterface */
-    private $entityManager;
-
     public function __construct(
-        SharedStorageInterface $sharedStorage,
-        FactoryInterface $orderFactory,
-        FactoryInterface $orderItemFactory,
-        FactoryInterface $customerFactory,
-        StateMachineFactoryInterface $stateMachineFactory,
-        OrderItemQuantityModifierInterface $itemQuantityModifier,
-        EntityManagerInterface $entityManager
+        private readonly SharedStorageInterface $sharedStorage,
+        private readonly FactoryInterface $orderFactory,
+        private readonly FactoryInterface $orderItemFactory,
+        private readonly FactoryInterface $customerFactory,
+        private readonly WorkflowInterface $orderWorkflow,
+        private readonly WorkflowInterface $orderPaymentWorkflow,
+        private readonly WorkflowInterface $shipmentWorkflow,
+        private readonly OrderItemQuantityModifierInterface $itemQuantityModifier,
+        private readonly EntityManagerInterface $entityManager
     ) {
-        $this->sharedStorage = $sharedStorage;
-        $this->orderFactory = $orderFactory;
-        $this->orderItemFactory = $orderItemFactory;
-        $this->customerFactory = $customerFactory;
-        $this->stateMachineFactory = $stateMachineFactory;
-        $this->itemQuantityModifier = $itemQuantityModifier;
-        $this->entityManager = $entityManager;
     }
 
     /**
@@ -90,8 +65,8 @@ final class RelatedProductsContext implements Context
         Assert::greaterThanEq($numberOfOrders, 1);
         for ($i = 0; $i < $numberOfOrders; ++$i) {
             $order = $this->createOrder();
-            $this->stateMachineFactory->get($order, OrderTransitions::GRAPH)
-                ->apply(OrderTransitions::TRANSITION_CREATE);
+
+            $this->orderWorkflow->apply($order, OrderTransitions::TRANSITION_CREATE);
             $this->applyPaymentTransitionOnOrder($order, PaymentTransitions::TRANSITION_COMPLETE);
 
             foreach ($products as $product) {
@@ -145,8 +120,7 @@ final class RelatedProductsContext implements Context
     private function applyPaymentTransitionOnOrder(OrderInterface $order, string $transition)
     {
         foreach ($order->getPayments() as $payment) {
-            $this->stateMachineFactory->get($payment, PaymentTransitions::GRAPH)
-                ->apply($transition);
+            $this->orderWorkflow->apply($payment, $transition);
         }
     }
 
@@ -163,13 +137,11 @@ final class RelatedProductsContext implements Context
 
     private function payOrder(OrderInterface $order): void
     {
-        $this->stateMachineFactory->get($order, OrderPaymentTransitions::GRAPH)
-            ->apply(OrderPaymentTransitions::TRANSITION_PAY);
+        $this->orderPaymentWorkflow->apply($order,OrderPaymentTransitions::TRANSITION_PAY);
     }
 
     private function shipOrder(OrderInterface $order): void
     {
-        $this->stateMachineFactory->get($order, OrderShippingTransitions::GRAPH)
-            ->apply(OrderShippingTransitions::TRANSITION_SHIP);
+        $this->shipmentWorkflow->apply($order,OrderShippingTransitions::TRANSITION_SHIP);
     }
 }

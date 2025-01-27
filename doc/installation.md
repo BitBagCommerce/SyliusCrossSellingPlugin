@@ -16,13 +16,13 @@ ADDITIONAL
 ## Requirements:
 We work on stable, supported and up-to-date versions of packages. We recommend you to do the same.
 
-| Package       | Version         |
-|---------------|-----------------|
-| PHP           | \>=8.0          |
-| sylius/sylius | 1.12.x - 1.13.x |
-| MySQL         | \>= 5.7         |
-| NodeJS        | \>= 18.x        |
-| ElasticSearch | \>= 7.x         |
+| Package       | Version  |
+|---------------|----------|
+| PHP           | \>=8.2   |
+| sylius/sylius | \>=2.0.0 |
+| MySQL         | \>= 5.7  |
+| NodeJS        | \>= 20.x |
+| ElasticSearch | \>= 7.x  |
 
 ## Composer:
 ```bash
@@ -130,18 +130,18 @@ Add encore functions to your templates:
 
 SyliusAdminBundle:
 ```php
-{# @SyliusAdminBundle/_scripts.html.twig #}
+{# templates/admin/javascripts.html.twig #}
 {{ encore_entry_script_tags('bitbag-cs-admin', null, 'cs_admin') }}
 
-{# @SyliusAdminBundle/_styles.html.twig #}
+{# templates/admin/stylesheets.html.twig #}
 {{ encore_entry_link_tags('bitbag-cs-admin', null, 'cs_admin') }}
 ```
 SyliusShopBundle:
 ```php
-{# @SyliusShopBundle/_scripts.html.twig #}
+{# templates/shop/javascripts.html.twig #}
 {{ encore_entry_script_tags('bitbag-cs-shop', null, 'cs_shop') }}
 
-{# @SyliusShopBundle/_styles.html.twig #}
+{# templates/shop/stylesheets.html.twig #}
 {{ encore_entry_link_tags('bitbag-cs-shop', null, 'cs_shop') }}
 ```
 
