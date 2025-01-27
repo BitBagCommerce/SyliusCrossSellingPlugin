@@ -16,8 +16,10 @@
             <argument type="service" id="sylius.factory.order" />
             <argument type="service" id="sylius.factory.order_item" />
             <argument type="service" id="sylius.factory.customer" />
-            <argument type="service" id="sm.factory" />
-            <argument type="service" id="sylius.order_item_quantity_modifier" />
+            <argument type="service" id="state_machine.sylius_order" />
+            <argument type="service" id="state_machine.sylius_order_payment" />
+            <argument type="service" id="state_machine.sylius_order_shipping" />
+            <argument type="service" id="sylius.modifier.order_item_quantity"/>
             <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
 
